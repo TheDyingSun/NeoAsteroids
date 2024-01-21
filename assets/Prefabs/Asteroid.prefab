@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2007855719930953198}
   - component: {fileID: 6230754758576029835}
   - component: {fileID: 1360929903726601782}
-  - component: {fileID: -649090704546502277}
+  - component: {fileID: 217635760339178149}
   m_Layer: 9
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc0ebac591d0ccf4f9f124ee6ecf998e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da70ff3b688ba4509828bbab46ba7fe3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-649090704546502277
+--- !u!114 &217635760339178149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,16 +168,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4221597474814354498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bad6a190a729f4bb008d0ebd27de34, type: 3}
+  m_Script: {fileID: 11500000, guid: fad8588bff3684a608e741d5c8233cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: bc0ebac591d0ccf4f9f124ee6ecf998e, type: 3}
-  - {fileID: 21300000, guid: 5a1917322cb295449bf7552a48bba38e, type: 3}
-  - {fileID: 21300000, guid: 858c9cd8f5aa40c4eb8f181d3a3d0e50, type: 3}
-  - {fileID: 21300000, guid: b3b84f8ff9ae1104cbcc0c1a9308590c, type: 3}
+  - {fileID: 21300000, guid: da70ff3b688ba4509828bbab46ba7fe3, type: 3}
+  - {fileID: 21300000, guid: 3d645b6a0f6484edd9c8dd116b845260, type: 3}
+  - {fileID: 21300000, guid: ca93f0ee0b80a4f169ebab9ee159d785, type: 3}
+  - {fileID: 21300000, guid: b4f3e19779b2948dfbf6e99ad51dbe50, type: 3}
   maxSize: 2
   minSize: 1
   size: 1
   speed: 40
+  weightMultipler: 2.5
   maxLifetime: 30

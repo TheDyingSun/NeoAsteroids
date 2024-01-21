@@ -164,10 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 339722053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba337e90c1b8f604489d1513a43ac084, type: 3}
+  m_Script: {fileID: 11500000, guid: 005c133823d0c4cb3a7f8117c2e52ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: -649090704546502277, guid: 59c06af277065974bbae72abce1d190a, type: 3}
+  asteroidPrefab: {fileID: 217635760339178149, guid: 8027832d16f6c4a5dbea8b9c58e5b8ff, type: 3}
   spawnRate: 2
   spawnAmount: 1
   spawnDistance: 15
@@ -580,7 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466004248}
-  - component: {fileID: 1466004247}
+  - component: {fileID: 1466004249}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -588,24 +588,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1466004247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466004246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a4b624ad48a9742a0e3116dd698f10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1622613576}
-  respawnTime: 3
-  invincibilityTime: 3
-  explosion: {fileID: 1670478344}
-  lives: 3
-  score: 0
 --- !u!4 &1466004248
 Transform:
   m_ObjectHideFlags: 0
@@ -621,6 +603,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466004249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466004246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ab2cc8956d04de992d0d560e291917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1622613577}
+  respawnTime: 3
+  invincibilityTime: 3
+  explosion: {fileID: 1670478344}
+  lives: 3
+  score: 0
 --- !u!1 &1622613570
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1622613571}
   - component: {fileID: 1622613575}
   - component: {fileID: 1622613574}
-  - component: {fileID: 1622613576}
+  - component: {fileID: 1622613577}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -682,7 +682,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e49b907ce68367c4296e8ea36cd09997, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d2c99d0afb0a452c999c492872f3dfe, type: 3}
   m_Color: {r: 0, g: 1, b: 0.8467734, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -780,7 +780,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1622613576
+--- !u!114 &1622613577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,15 +789,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622613570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd8006588a4b7de4cb17d08f401290dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fbdeacb0b3a04927873387860c16e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6724015443932136269, guid: 0ecef8e47c461254ebb3dc396d11f02d, type: 3}
+  bulletPrefab: {fileID: 3274511626109633122, guid: c2ebcc98093474de79d8d02cc8f96f71, type: 3}
   thrustSpeed: 3
   turnSpeed: 2
-  spriteRenderer: {fileID: 0}
-  defaultCol: {r: 0, g: 0.9843138, b: 0.8352942, a: 1}
-  respawnColor: {r: 1, g: 0.46568146, b: 0, a: 1}
+  spriteRenderer: {fileID: 1622613571}
+  defaultCol: {r: 0.007843138, g: 0.9843138, b: 0.83921576, a: 1}
+  respawnColor: {r: 1, g: 0.4666667, b: 0.003921569, a: 1}
 --- !u!1 &1670478342
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,13 +872,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
