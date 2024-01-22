@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
     public Player player;
 
     public float respawnTime = 3.0f;
@@ -17,6 +15,12 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
 
     public int score = 0;
+
+    private void Update() {
+        if (Input.GetKey("escape")) {
+            SceneManager.LoadScene(sceneName:"Main Menu");
+        }
+    }
 
 
     public void AsteroidDestroyed(Asteroid asteroid){
@@ -29,10 +33,8 @@ public class GameManager : MonoBehaviour
 
         }
 
-
         this.explosion.transform.position = asteroid.transform.position; 
         this.explosion.Play();
-
     }
 
     public void PlayerDied(){
@@ -48,12 +50,6 @@ public class GameManager : MonoBehaviour
             Invoke(nameof(Respawn), respawnTime);
 
         }
-
-        
-
-
-
-
     }
 
     // Update is called once per frame
@@ -63,14 +59,11 @@ public class GameManager : MonoBehaviour
         this.player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
         this.player.gameObject.SetActive(true);
         Invoke(nameof(TurnOnCollisions), invincibilityTime);
-        
-
     }
 
     private void TurnOnCollisions(){
         this.player.gameObject.layer = LayerMask.NameToLayer("Player");
         this.player.spriteRenderer.color = this.player.defaultCol;
-
     }
 
     private void GameOver(){
@@ -78,8 +71,6 @@ public class GameManager : MonoBehaviour
         this.score = 0;
 
         Respawn();
-
-
     }
 
 }
