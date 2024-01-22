@@ -12,4 +12,8 @@ public class SceneLauncher : MonoBehaviour
     public void Initial_Build() {
         SceneManager.LoadScene(sceneName:"Asteroids (Old)");
     }
+
+    public void Credits() {
+        SceneManager.LoadScene(sceneName:"Credits");
+    }
 }
