@@ -17,11 +17,13 @@ public class Player : MonoBehaviour{
 
     public Color respawnColor;
 
+    public Animator animator;
+
     private void Awake(){
         _rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultCol;
-
+        animator = GetComponent<Animator>();
     }
 
     private void Update(){
@@ -78,10 +80,6 @@ public class Player : MonoBehaviour{
         if (collision.gameObject.tag == "Asteroid"){
             _rigidBody.velocity = Vector3.zero;
             _rigidBody.angularVelocity = 0.0f;
-
-
-            this.gameObject.SetActive(false);
-
             FindObjectOfType<GameManager>().PlayerDied();
         }
 
