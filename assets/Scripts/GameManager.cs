@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public PauseScreen pausescreen;
+    public ConfirmExitScreen exitScreen;
+
+    public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
 
     public ParticleSystem explosion;
@@ -16,10 +20,15 @@ public class GameManager : MonoBehaviour
 
     private void Update() {
         if (Input.GetKey("escape")) {
-            SceneManager.LoadScene(sceneName:"Main Menu");
+            //Show Pause Menu
+            
         }
     }
 
+    private void ExitToMainMenu() {
+        SceneManager.LoadScene(sceneName:"Main Menu");
+
+    }
 
     public void AsteroidDestroyed(Asteroid asteroid){
         if (asteroid.size < 0.75){
