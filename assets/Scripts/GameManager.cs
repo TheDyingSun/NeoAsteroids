@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-
-    public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
 
     public ParticleSystem explosion;
@@ -40,30 +38,22 @@ public class GameManager : MonoBehaviour
     public void PlayerDied(){
         this.explosion.transform.position  = this.player.transform.position; 
         this.explosion.Play();
-        
         this.lives--;
 
-        if(this.lives <= 0){
-            GameOver();
-
-        } else {
-            Invoke(nameof(Respawn), respawnTime);
-
-        }
+        if(this.lives <= 0){ GameOver(); } 
+        else { Respawn(); }
     }
 
     // Update is called once per frame
-    void Respawn(){
-        this.player.transform.position = Vector3.zero;
-        this.player.spriteRenderer.color = this.player.respawnColor;
+    private void Respawn(){
         this.player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
-        this.player.gameObject.SetActive(true);
+        this.player.animator.SetBool("invincible", true);
         Invoke(nameof(TurnOnCollisions), invincibilityTime);
     }
 
     private void TurnOnCollisions(){
         this.player.gameObject.layer = LayerMask.NameToLayer("Player");
-        this.player.spriteRenderer.color = this.player.defaultCol;
+        this.player.animator.SetBool("invincible", false);
     }
 
     private void GameOver(){
