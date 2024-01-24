@@ -16,4 +16,8 @@ public class SceneLauncher : MonoBehaviour
     public void Credits() {
         SceneManager.LoadScene(sceneName:"Credits");
     }
+
+    public void Version_Notes() {
+        SceneManager.LoadScene(sceneName:"Version Notes");
+    }
 }
