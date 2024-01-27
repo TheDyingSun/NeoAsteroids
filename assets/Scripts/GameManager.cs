@@ -6,24 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    public PauseScreen pausescreen;
-    public ConfirmExitScreen exitScreen;
+    public InGame inGameInterface;
+    public ParticleSystem explosion;
 
     public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
-
-    public ParticleSystem explosion;
-
     public int lives = 3;
-
     public int score = 0;
-
-    private void Update() {
-        if (Input.GetKey("escape")) {
-            //Show Pause Menu
-            
-        }
-    }
 
     private void ExitToMainMenu() {
         SceneManager.LoadScene(sceneName:"Main Menu");
@@ -32,22 +21,25 @@ public class GameManager : MonoBehaviour
 
     public void AsteroidDestroyed(Asteroid asteroid){
         if (asteroid.size < 0.75){
-            score += 100;
+            score += 1000;
         } else if(asteroid.size < 1){
-            score += 50;
+            score += 500;
         } else {
-            score += 10;
+            score += 100;
 
         }
 
         this.explosion.transform.position = asteroid.transform.position; 
         this.explosion.Play();
+        this.inGameInterface.updateScore(score);
     }
 
     public void PlayerDied(){
         this.explosion.transform.position  = this.player.transform.position; 
         this.explosion.Play();
         this.lives--;
+
+        inGameInterface.updateLives(this.lives);
 
         if(this.lives <= 0){ GameOver(); } 
         else { Respawn(); }
