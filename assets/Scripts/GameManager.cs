@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 
     public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
+    public float gameEndTime = 2.0f;
     public int lives = 3;
     public int score = 0;
 
     private void ExitToMainMenu() {
         SceneManager.LoadScene(sceneName:"Main Menu");
-
     }
 
     public void AsteroidDestroyed(Asteroid asteroid){
@@ -58,10 +58,13 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver(){
-        this.lives = 3;
+        this.lives = 0;
         this.score = 0;
+        inGameInterface.updateLives(this.lives);
+        inGameInterface.updateScore(this.score);
+        this.player.gameObject.SetActive(false);
 
-        Respawn();
+        Invoke(nameof(ExitToMainMenu), gameEndTime);
     }
 
 }

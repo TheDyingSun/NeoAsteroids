@@ -27,6 +27,11 @@ public class InGame : MonoBehaviour
 
     public void updateLives(int lives) {
         switch (lives) {
+            case 0:
+                life_1.style.display = DisplayStyle.None;
+                life_2.style.display = DisplayStyle.None;
+                life_3.style.display = DisplayStyle.None;
+                break;
             case 1:
                 life_1.style.display = DisplayStyle.Flex;
                 life_2.style.display = DisplayStyle.None;
