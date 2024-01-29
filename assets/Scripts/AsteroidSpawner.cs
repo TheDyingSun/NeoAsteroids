@@ -14,11 +14,7 @@ public class AsteroidSpawner : MonoBehaviour{
 
     private void Start(){
         InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
-
-        //asteroidPrefab = GetComponent<Asteroid>();
-
     }
-
 
     private void Spawn(){
         for (int i = 0; i < this.spawnAmount; i++){
@@ -30,13 +26,7 @@ public class AsteroidSpawner : MonoBehaviour{
 
             Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
             asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
-            asteroid.SetTrajectory(rotation * -spawnDirection);
-
-
+            asteroid.SetTrajectory(rotation * -spawnDirection / this.spawnDistance);
         }
-
-
     }
-
-
 }

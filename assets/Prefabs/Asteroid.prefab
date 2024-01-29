@@ -177,8 +177,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca93f0ee0b80a4f169ebab9ee159d785, type: 3}
   - {fileID: 21300000, guid: b4f3e19779b2948dfbf6e99ad51dbe50, type: 3}
   maxSize: 2
-  minSize: 1
+  minSize: 0.5
   size: 1
-  speed: 40
-  weightMultipler: 2.5
+  speed: 300
+  weightOffset: 2
   maxLifetime: 30
