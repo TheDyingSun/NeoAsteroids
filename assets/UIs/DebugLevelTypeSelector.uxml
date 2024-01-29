@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIs/PauseScreenUIClasses.uss?fileID=7433441132597879392&amp;guid=65f7635433171164e8be29f671adf75c&amp;type=3#PauseScreenUIClasses" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1; height: 0; align-self: center; align-items: center; justify-content: flex-end;">
+            <ui:Label tabindex="-1" text="Choose Level Type" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" style="-unity-text-align: upper-center; width: 500px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; width: 50%; padding-left: 0; padding-right: 0; transform-origin: center; translate: 50% 0; text-overflow: clip; flex-direction: row; align-self: flex-start;">
+            <ui:Button text="Static" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StaticLevelSelector" class="button" />
+            <ui:Button text="Side Scroll" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SideScrollLevelSelector" class="button" />
+            <ui:Button text="CutScene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CutSceneLevelSelector" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
