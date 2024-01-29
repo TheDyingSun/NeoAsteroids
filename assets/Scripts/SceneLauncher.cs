@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLauncher : MonoBehaviour
 {
     public void Play() {
-        SceneManager.LoadScene(sceneName:"Asteroids");
+        SceneManager.LoadScene(sceneName:"LevelSelection");
     }
 
     public void Initial_Build() {
