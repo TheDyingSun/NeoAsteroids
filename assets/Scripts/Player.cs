@@ -28,19 +28,10 @@ public class Player : MonoBehaviour{
 
     private void Update(){
         _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
-        if(_thrusting){Debug.Log("Thrust given");}
-
-
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            //Turning Left
-            turnDirection = 1.0f;
-            Debug.Log("Turning Left");
-            
-
+            turnDirection = 1.0f; // turning left
         } else  if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            //Turning Left
-            turnDirection = -1.0f;
-            Debug.Log("Turning Right");
+            turnDirection = -1.0f; // turning right
         } else {
             turnDirection = 0.0f;
         }
