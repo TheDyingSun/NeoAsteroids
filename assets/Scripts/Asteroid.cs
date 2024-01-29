@@ -6,6 +6,7 @@ public class Asteroid : MonoBehaviour
     public Sprite[] sprites;
     private SpriteRenderer spriteRender;
     private Rigidbody2D rigidBody;
+    public AudioClip damageClip;
 
 
     public float maxSize = 1.5f;
@@ -46,6 +47,7 @@ public class Asteroid : MonoBehaviour
                 CreateSplit();
             }
 
+            AudioManager.instance.PlayClip(damageClip, transform, 1f);
             FindObjectOfType<GameManager>().AsteroidDestroyed(this);
             Destroy(this.gameObject);
         }

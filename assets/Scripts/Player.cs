@@ -12,6 +12,7 @@ public class Player : MonoBehaviour{
 
     private Rigidbody2D _rigidBody;
     public SpriteRenderer spriteRenderer;
+    public AudioClip damageClip;
 
     public Color defaultCol;
 
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour{
         if (collision.gameObject.tag == "Asteroid"){
             _rigidBody.velocity = Vector3.zero;
             _rigidBody.angularVelocity = 0.0f;
+            AudioManager.instance.PlayClip(damageClip, transform, 1f);
             FindObjectOfType<GameManager>().PlayerDied();
         }
 
