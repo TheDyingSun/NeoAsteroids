@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour{
 
     public Bullet bulletPrefab;
+    public Image ZoomingImage;
 
     private bool _thrusting;
     private float turnDirection;
@@ -24,14 +26,26 @@ public class Player : MonoBehaviour{
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultCol;
         animator = GetComponent<Animator>();
+        if (ZoomingImage) {
+            ZoomingImage.color = new Color(255, 255, 255, 0);
+        }
     }
 
     private void Update(){
         _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+        if(_thrusting){Debug.Log("Thrust given");}
+
+
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            turnDirection = 1.0f; // turning left
+            //Turning Left
+            turnDirection = 1.0f;
+            Debug.Log("Turning Left");
+            
+
         } else  if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            turnDirection = -1.0f; // turning right
+            //Turning Left
+            turnDirection = -1.0f;
+            Debug.Log("Turning Right");
         } else {
             turnDirection = 0.0f;
         }
@@ -74,6 +88,16 @@ public class Player : MonoBehaviour{
             FindObjectOfType<GameManager>().PlayerDied();
         }
 
+        if (collision.gameObject.tag == "Right Boundary" && ZoomingImage) {
+            ZoomingImage.color = new Color(255, 255, 255, 1);
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Right Boundary" && ZoomingImage) {
+            ZoomingImage.color = new Color(255, 255, 255, 0);
+        }
     }
 
 }
