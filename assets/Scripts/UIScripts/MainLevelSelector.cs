@@ -31,7 +31,7 @@ public class MainLevelSelector : MonoBehaviour
     }
 
     private void ChangeToSideScrollLevel(){
-        SceneManager.LoadScene(sceneName:"SideScrollLevel");
+        SceneManager.LoadScene(sceneName:"SideScroller");
 
     }
 
