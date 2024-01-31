@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &107180377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107180379}
+  - component: {fileID: 107180378}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &107180378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107180377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5230f7c546648e1b33d002016432f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceObject: {fileID: 4422047320404064664, guid: b2210cc5c8bfb43f79cf649533a1bfa7, type: 3}
+--- !u!4 &107180379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107180377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8296777, y: 0.372652, z: -9.933979}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381180056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,6 +1428,7 @@ MonoBehaviour:
   thrustSpeed: 4
   turnSpeed: 0.5
   spriteRenderer: {fileID: 1622613571}
+  damageClip: {fileID: 0}
   defaultCol: {r: 0.007843138, g: 0.9843138, b: 0.83921576, a: 1}
   respawnColor: {r: 1, g: 0.46, b: 0.277, a: 1}
   animator: {fileID: 0}
@@ -6376,3 +6422,4 @@ SceneRoots:
   - {fileID: 950080019}
   - {fileID: 885752601}
   - {fileID: 1981811542}
+  - {fileID: 107180379}
