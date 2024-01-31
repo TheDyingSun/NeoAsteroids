@@ -13,7 +13,7 @@ public class SideScrollingSpawner : MonoBehaviour{
     // public Vector2 testTrajectory;
     // public float testSlope;
 
-    float trajectoryVariance = 15.0f;
+    float trajectoryVariance = 10.0f;
 
 
     private void Start(){
@@ -41,7 +41,7 @@ public class SideScrollingSpawner : MonoBehaviour{
 
             Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
             asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
-            asteroid.SetTrajectory(rotation * -spawnDirection);
+            asteroid.SetTrajectory(rotation * -spawnDirection / this.spawnDistance);
             // testTrajectory = rotation * -spawnDirection;
             // testSlope = testTrajectory.y / testTrajectory.x;
 

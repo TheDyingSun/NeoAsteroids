@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 4538fd50c16caf943b09214e6f800af8
+  - enabled: 1
+    path: Assets/Scenes/SideScroller.unity
+    guid: ca804aac63e34493fbbe7ee68eb4d3a9
   m_configObjects: {}
