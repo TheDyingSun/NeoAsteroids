@@ -9,21 +9,19 @@ public class Asteroid : MonoBehaviour
 
 
     public float maxSize = 1.5f;
-    public float minSize = 0.5f;
+    public float minSize = 0.75f;
 
     public float size = 1.0f;
 
-    public float speed = 50.0f;
+    public float speed = 25.0f;
 
-    public float weightMultipler = 2.5f;
+    public float weightOffset = 2.5f;
 
     public float maxLifetime = 30.0f;
 
     private void Awake(){
-
         spriteRender = GetComponent<SpriteRenderer>();
-        rigidBody = GetComponent<Rigidbody2D>();
-        
+        rigidBody = GetComponent<Rigidbody2D>(); 
     }
 
     private void Start(){
@@ -31,13 +29,11 @@ public class Asteroid : MonoBehaviour
 
         this.transform.eulerAngles = new Vector3(0f,0f, Random.value * 360.0f);
         this.transform.localScale = Vector3.one * this.size;
-
-        rigidBody.mass = this.size * weightMultipler;
     }
     
     public void SetTrajectory(Vector2 direction){
+        rigidBody.mass = this.size + this.weightOffset;
         rigidBody.AddForce(direction * this.speed);
-
         Destroy(this.gameObject, this.maxLifetime);
     }
 
@@ -46,32 +42,21 @@ public class Asteroid : MonoBehaviour
         if(collision.gameObject.tag == "Bullet"){
             if((this.size/2) >= minSize){
                 //Split into 2
-
                 CreateSplit();
                 CreateSplit();
-
-                
             }
 
             FindObjectOfType<GameManager>().AsteroidDestroyed(this);
             Destroy(this.gameObject);
-            
-
         }
-
     }
 
     private void CreateSplit(){
-
         Vector2 position = this.transform.position;
         position += Random.insideUnitCircle * 0.5f;
 
-        
         Asteroid half = Instantiate(this, position, this.transform.rotation);
         half.size = this.size * 0.5f;
-        half.SetTrajectory(Random.insideUnitCircle.normalized * this.speed);
-
+        half.SetTrajectory(Random.insideUnitCircle.normalized);
     }
-
-
 }
