@@ -6131,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreenController
       objectReference: {fileID: 0}
+    - target: {fileID: 4065640149770327904, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6168206712520493382, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6171,6 +6175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8148225602111933641, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6195,3 +6203,4 @@ SceneRoots:
   - {fileID: 861704259}
   - {fileID: 930513776}
   - {fileID: 314627931}
+
