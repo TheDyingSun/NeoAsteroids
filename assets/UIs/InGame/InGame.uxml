@@ -1,10 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIs/InGame/life.uss?fileID=7433441132597879392&amp;guid=246cde0c8d9a2488ab91868e9b7e76cb&amp;type=3#life" />
+    <Style src="project://database/Assets/UIs/text.uss?fileID=7433441132597879392&amp;guid=de901fdc1b9e54ee398cd56b57b1838c&amp;type=3#text" />
     <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: column; align-items: center; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px;">
-        <ui:Label tabindex="-1" text="01234567" parse-escape-sequences="true" display-tooltip-when-elided="true" name="score" style="-unity-font: url(&apos;project://database/Assets/Fonts/GapSansBlack.ttf?fileID=12800000&amp;guid=bbe17fa3bcddd4d25b841430a41ae3cc&amp;type=3#GapSansBlack&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Sprat-ExtendedMedium%20SDF%201.asset?fileID=11400000&amp;guid=b1502be4e265b40d9aaa6005f74d3aa7&amp;type=2#Sprat-ExtendedMedium SDF 1&apos;); font-size: 40px; color: rgb(255, 255, 255); letter-spacing: -15px; height: auto; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+        <ui:Label tabindex="-1" text="01234567" parse-escape-sequences="true" display-tooltip-when-elided="true" name="score" class="serif" style="font-size: 60px; color: rgb(255, 255, 255); letter-spacing: -15px; height: auto; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
         <ui:VisualElement name="lives" style="flex-grow: 0; width: 300px; height: 15px; flex-direction: row; align-items: center; justify-content: center; flex-shrink: 0;">
-            <ui:VisualElement name="life_1" style="flex-grow: 0; background-color: rgb(255, 255, 255); margin-right: 20px; margin-left: 20px; width: 30px; height: 6px;" />
-            <ui:VisualElement name="life_2" style="flex-grow: 0; background-color: rgb(255, 255, 255); margin-right: 20px; margin-left: 20px; width: 30px; height: 6px;" />
-            <ui:VisualElement name="life_3" style="flex-grow: 0; background-color: rgb(255, 255, 255); margin-right: 20px; margin-left: 20px; width: 30px; height: 6px;" />
+            <ui:VisualElement name="life_1" class="life" />
+            <ui:VisualElement name="life_2" class="life" />
+            <ui:VisualElement name="life_3" class="life" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
