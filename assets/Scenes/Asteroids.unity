@@ -1025,9 +1025,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3274511626109633122, guid: c2ebcc98093474de79d8d02cc8f96f71, type: 3}
+  ZoomingImage: {fileID: 0}
   thrustSpeed: 4
   turnSpeed: 0.5
   spriteRenderer: {fileID: 1622613571}
+  damageClip: {fileID: 8300000, guid: 23a4b1bb6751e4f90ac48acf5a7df676, type: 3}
   defaultCol: {r: 0.007843138, g: 0.9843138, b: 0.83921576, a: 1}
   respawnColor: {r: 1, g: 0.46, b: 0.277, a: 1}
   animator: {fileID: 0}
@@ -5952,6 +5954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreenController
       objectReference: {fileID: 0}
+    - target: {fileID: 4065640149770327904, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6168206712520493382, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5992,6 +5998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8148225602111933641, guid: 80b7b8107b945ac49906bbfffec86b53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6013,3 +6023,5 @@ SceneRoots:
   - {fileID: 2100942901}
   - {fileID: 864423862}
   - {fileID: 1470321418}
+  - {fileID: 861704259}
+  - {fileID: 930513776}
