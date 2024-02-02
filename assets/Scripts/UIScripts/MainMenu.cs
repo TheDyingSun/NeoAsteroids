@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Initial_Build() {
-        SceneManager.LoadScene(sceneName:"Asteroids (Old)");
+        SceneManager.LoadScene(sceneName:"AsteroidsOld");
     }
 
     public void Credits() {
@@ -36,6 +36,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Version_Notes() {
-        SceneManager.LoadScene(sceneName:"Version Notes");
+        SceneManager.LoadScene(sceneName:"VersionNotes");
     }
 }
