@@ -1,0 +1,29 @@
+﻿title: Start
+---
+Wow!
+My first ever Yarn script in Unity!
+
+-> Gosh!
+-> Incredible!
+-> I'm amazed!
+
+Anyway, time to get writing!
+===
+
+title: Scene1
+---
+
+Yar: Hello there traveler
+Yar: While you're traveling I hope you get to make it to my planet...
+Yar: We have the most beautiful constellations
+Yar: Our solar eclipse festival is coming up.
+Yar: ...
+Yar: ...Sorry, I must be boring you...
+
+-> No continue
+    Yar: We use the stars to tell our futures...
+-> It might be time for me to head our
+    Yar: I wish you well
+<<kickPlayerOut>>
+
+===
