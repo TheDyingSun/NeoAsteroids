@@ -1,0 +1,9 @@
+.serif {
+    -unity-font: url('project://database/Assets/Fonts/Messapia-Regular.otf?fileID=12800000&guid=a7c5b12b4345a4c0a8aa8739c6faee5c&type=3#Messapia-Regular');
+    -unity-font-definition: url('project://database/Assets/Fonts/Messapia-Regular%20SDF.asset?fileID=11400000&guid=af1d369768f034665b68335d0d3e8ca0&type=2#Messapia-Regular SDF');
+}
+
+.sans-serif {
+    -unity-font: url('project://database/Assets/Fonts/Messapia-Bold.otf?fileID=12800000&guid=27030b686951441129ff7aa864826f07&type=3#Messapia-Bold');
+    -unity-font-definition: url('project://database/Assets/Fonts/Messapia-Bold%20SDF.asset?fileID=11400000&guid=c26c3d87dfd264f5c96fc138b15c400b&type=2#Messapia-Bold SDF');
+}

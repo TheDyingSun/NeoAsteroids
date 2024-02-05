@@ -1,8 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UIs/PauseScreenUIClasses.uss?fileID=7433441132597879392&amp;guid=65f7635433171164e8be29f671adf75c&amp;type=3#PauseScreenUIClasses" />
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
+    <Style src="project://database/Assets/UIs/text.uss?fileID=7433441132597879392&amp;guid=de901fdc1b9e54ee398cd56b57b1838c&amp;type=3#text" />
+    <ui:VisualElement name="VisualElement" class="serif" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
         <ui:VisualElement style="flex-grow: 0; height: auto; align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
-            <ui:Label tabindex="-1" text="choose level type" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" style="-unity-text-align: upper-center; width: auto; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); height: auto; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Sprat-ExtendedMedium%20SDF%201.asset?fileID=11400000&amp;guid=b1502be4e265b40d9aaa6005f74d3aa7&amp;type=2#Sprat-ExtendedMedium SDF 1&apos;); font-size: 60px;" />
+            <ui:Label tabindex="-1" text="choose level type" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" style="-unity-text-align: upper-center; width: auto; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); height: auto; font-size: 60px;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 0; width: auto; padding-left: 0; padding-right: 0; transform-origin: left top; translate: 0 0; text-overflow: clip; flex-direction: row; align-self: center; align-items: auto; justify-content: flex-start; flex-shrink: 0;">
             <ui:Button text="static" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StaticLevelSelector" class="button" />

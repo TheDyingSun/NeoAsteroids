@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bbe17fa3bcddd4d25b841430a41ae3cc
+guid: 27030b686951441129ff7aa864826f07
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Gap Sans
+  - Messapia
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

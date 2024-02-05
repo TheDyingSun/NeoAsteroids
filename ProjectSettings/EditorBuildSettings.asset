@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 9d571ce6c01a34d79b081a47e722794d
   - enabled: 1
     path: Assets/Scenes/Asteroids.unity
@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 9c77eeb56c5a5a248af40ad2fa1a8e3f
   - enabled: 1
-    path: Assets/Scenes/Asteroids (Old).unity
+    path: Assets/Scenes/AsteroidsOld.unity
     guid: 205fc17f219d54a5a9ed575d9be5a7bb
   - enabled: 1
-    path: Assets/Scenes/Version Notes.unity
+    path: Assets/Scenes/VersionNotes.unity
     guid: 3236add651b0c4327bc2f044485aa38a
   - enabled: 1
     path: Assets/Scenes/CutScene.unity

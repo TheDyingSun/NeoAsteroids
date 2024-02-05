@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
 
     private void ExitToMainMenu() {
-        SceneManager.LoadScene(sceneName:"Main Menu");
+        SceneManager.LoadScene(sceneName:"MainMenu");
     }
 
     public void AsteroidDestroyed(Asteroid asteroid){

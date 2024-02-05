@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIs/text.uss?fileID=7433441132597879392&amp;guid=de901fdc1b9e54ee398cd56b57b1838c&amp;type=3#text" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; padding-top: 100px; padding-right: 100px; padding-bottom: 100px; padding-left: 100px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); flex-shrink: 0;">
+        <ui:Label tabindex="-1" text="version notes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="sans-serif" style="-unity-text-align: upper-center; font-size: 60px; margin-top: 40px; margin-right: 40px; margin-bottom: 40px; margin-left: 40px;" />
+        <ui:VisualElement name="Versions" class="serif" style="flex-grow: 1; flex-direction: column;">
+            <ui:VisualElement name="Version" style="flex-grow: 0; margin-bottom: 40px;">
+                <ui:Label tabindex="-1" text="v0.0.1.0s3:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" style="-unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 40px;" />
+                <ui:Label tabindex="-1" text="no changes yet" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Changes" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 100px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 25px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Version" style="flex-grow: 0; margin-bottom: 40px;">
+                <ui:Label tabindex="-1" text="v0.0.1.0s2:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" style="-unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 40px;" />
+                <ui:Label tabindex="-1" text="added splash screen&#10;added sidescroller level type&#10;added level selector&#10;added audio effects&#10;added in-game user interface&#10;added escape button in initial build" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Changes" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 100px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 25px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Version" style="flex-grow: 0; margin-bottom: 40px;">
+                <ui:Label tabindex="-1" text="v0.0.1.0s1:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" style="-unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 40px;" />
+                <ui:Label tabindex="-1" text="adjusted player movement&#10;removed respawn delay and position reset&#10;added invincibility animation&#10;added credits screen&#10;preserved original build (accessible via “initial build”)&#10;added start screen&#10;added exit button (esc)&#10;added pause screen&#10;added version notes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Changes" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 100px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 25px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

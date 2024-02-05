@@ -1,0 +1,8 @@
+.life {
+    flex-grow: 0;
+    background-color: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 30px;
+    height: 6px;
+}
