@@ -8,6 +8,7 @@ public class SideScrollingSpawner : MonoBehaviour{
     public int spawnAmount = 1;
 
     public float spawnDistance = 15.0f;
+    public float spawnSpeed = 50.0f;
 
     // public Vector3 testDirection;
     // public Vector2 testTrajectory;
@@ -29,7 +30,7 @@ public class SideScrollingSpawner : MonoBehaviour{
             //Spawn direction can only be right of the player, can't be behind
             Vector3 spawnDirection = Random.insideUnitCircle.normalized * this.spawnDistance;
             // testDirection = spawnDirection;
-            if ((spawnDirection.x + this.transform.position.x) < -4) {
+            if ((spawnDirection.x + this.transform.position.x) < -6.0f) {
                 spawnDirection.x = Mathf.Abs(spawnDirection.x);
                 spawnDirection.y = Mathf.Abs(spawnDirection.y);
             }
@@ -41,11 +42,8 @@ public class SideScrollingSpawner : MonoBehaviour{
 
             Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
             asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
+            asteroid.speed = spawnSpeed;
             asteroid.SetTrajectory(rotation * -spawnDirection / this.spawnDistance);
-            // testTrajectory = rotation * -spawnDirection;
-            // testSlope = testTrajectory.y / testTrajectory.x;
-
-
         }
 
 
