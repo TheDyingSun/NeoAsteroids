@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour{
 
     public Bullet bulletPrefab;
-    public Image ZoomingImage;
-
     private bool _thrusting;
     private float turnDirection;
 
@@ -27,9 +25,6 @@ public class Player : MonoBehaviour{
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultCol;
         animator = GetComponent<Animator>();
-        if (ZoomingImage) {
-            ZoomingImage.color = new Color(255, 255, 255, 0);
-        }
     }
 
     private void Update(){
@@ -68,9 +63,7 @@ public class Player : MonoBehaviour{
         }
 
         if(turnDirection != 0f){
-
             _rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Force);
-
         }
 
     }
@@ -90,16 +83,5 @@ public class Player : MonoBehaviour{
             FindObjectOfType<GameManager>().PlayerDied();
         }
 
-        if (collision.gameObject.tag == "Right Boundary" && ZoomingImage) {
-            ZoomingImage.color = new Color(255, 255, 255, 1);
-        }
-
     }
-
-    private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Right Boundary" && ZoomingImage) {
-            ZoomingImage.color = new Color(255, 255, 255, 0);
-        }
-    }
-
 }
