@@ -65,16 +65,16 @@ public class SideScrollPlayer : MonoBehaviour{
             _rigidBody.AddForce(Vector2.down * verticalSpeed, ForceMode2D.Force);
         }
 
-        if(turnDirection != 0f){
-            //_rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Impulse);
-            limRotation();
-        }
+        // if(turnDirection != 0f){
+        //     //_rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Impulse);
+        //     limRotation();
+        // }
 
     }
 
     private void Shoot(){
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        bullet.Project(this.transform.up);
+        bullet.Project(this.transform.up, _rigidBody.velocity);
 
     }
 
