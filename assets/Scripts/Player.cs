@@ -17,6 +17,9 @@ public class Player : MonoBehaviour{
     public Color defaultCol;
     public Color respawnColor;
 
+    private float lastBulletFire = 0f;
+    public float bulletCooldown = 0.15f;
+
     public Animator animator;
 
     private void Awake(){
@@ -37,7 +40,12 @@ public class Player : MonoBehaviour{
             turnDirection = 0.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+        // handle bullet firing
+        lastBulletFire += Time.deltaTime;
+        bool tryingToFire = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+        bool canFire = lastBulletFire > bulletCooldown;
+        if (tryingToFire && canFire) {
+            lastBulletFire = 0f;
             Shoot();
         }
     }
