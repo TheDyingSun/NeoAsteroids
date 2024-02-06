@@ -49,8 +49,6 @@ public class Player : MonoBehaviour{
 
     private void Shoot(){
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        Debug.Log(this.transform.up.magnitude);
-        Debug.Log(_rigidBody.velocity.magnitude);
         bullet.Project(this.transform.up, _rigidBody.velocity);
     }
 
