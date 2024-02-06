@@ -65,10 +65,10 @@ public class SideScrollPlayer : MonoBehaviour{
             _rigidBody.AddForce(Vector2.down * verticalSpeed, ForceMode2D.Force);
         }
 
-        // if(turnDirection != 0f){
-        //     //_rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Impulse);
-        //     limRotation();
-        // }
+        if(turnDirection != 0f){
+            //_rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Impulse);
+            limRotation();
+        }
 
     }
 
