@@ -33,7 +33,7 @@ public class PauseScreen : MonoBehaviour{
 
 
     private void ExitToMainMenu() {
-        SceneManager.LoadScene(sceneName:"Main Menu");
+        SceneManager.LoadScene(sceneName:"MainMenu");
 
     }
 
