@@ -936,7 +936,7 @@ MonoBehaviour:
   respawnTime: 3
   invincibilityTime: 3
   gameEndTime: 2
-  lives: 3
+  lives: 6
   score: 0
 --- !u!1 &1622613570 stripped
 GameObject:
@@ -961,8 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3274511626109633122, guid: c2ebcc98093474de79d8d02cc8f96f71, type: 3}
-  ZoomingImage: {fileID: 0}
-  turnSpeed: 0.25
+  turnSpeed: 0.5
   spriteRenderer: {fileID: 1622613571}
   damageClip: {fileID: 8300000, guid: 23a4b1bb6751e4f90ac48acf5a7df676, type: 3}
   defaultCol: {r: 0.007843138, g: 0.9843137, b: 0.8392157, a: 1}
@@ -5997,6 +5996,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2577724730981233479, guid: e0b766176c70e274d809ddfa4294cbde, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4006726368263853356, guid: e0b766176c70e274d809ddfa4294cbde, type: 3}
       propertyPath: m_Name
       value: Player
