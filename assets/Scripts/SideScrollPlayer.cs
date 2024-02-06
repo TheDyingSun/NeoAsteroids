@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class SideScrollPlayer : MonoBehaviour{
 
     public Bullet bulletPrefab;
-    public Image ZoomingImage;
 
     private float verticalSpeed;
     private float turnDirection;
@@ -25,9 +24,6 @@ public class SideScrollPlayer : MonoBehaviour{
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultCol;
         animator = GetComponent<Animator>();
-        if (ZoomingImage) {
-            ZoomingImage.color = new Color(255, 255, 255, 0);
-        }
     }
 
     private void Update(){
@@ -38,7 +34,7 @@ public class SideScrollPlayer : MonoBehaviour{
             
 
         } else  if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            //Turning Left
+            //Turning Right
             turnDirection = -1.0f;
             Debug.Log("Turning Right");
         } else {
@@ -47,11 +43,11 @@ public class SideScrollPlayer : MonoBehaviour{
 
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
             verticalSpeed = -2.0f;
-            Debug.Log("Moving Down");
+            Debug.Log("Moving Up");
 
         } else  if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
             verticalSpeed = 2.0f;
-            Debug.Log("Moving Up");
+            Debug.Log("Moving Down");
         } else {
             verticalSpeed = 0.0f;
         }
@@ -70,8 +66,8 @@ public class SideScrollPlayer : MonoBehaviour{
         }
 
         if(turnDirection != 0f){
-            _rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Force);
-            // limRotation();
+            //_rigidBody.AddTorque(turnSpeed * turnDirection, ForceMode2D.Impulse);
+            limRotation();
         }
 
     }
@@ -82,23 +78,23 @@ public class SideScrollPlayer : MonoBehaviour{
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-
-        if (collision.gameObject.tag == "Asteroid"){
-            _rigidBody.velocity = Vector3.zero;
-            _rigidBody.angularVelocity = 0.0f;
-            AudioManager.instance.PlayClip(damageClip, transform, 1f);
-            FindObjectOfType<GameManager>().PlayerDied();
-        }
-
-    }
-
     private void limRotation() {
         //Code from: https://www.youtube.com/watch?v=dU_6Z3WKdtg 
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles.z = (eulerAngles.z > 180) ? eulerAngles.z - 360 : eulerAngles.z;
-        eulerAngles.z = Mathf.Clamp(eulerAngles.z, -180f, 0f);
+        eulerAngles.z = (eulerAngles.z < 180) ? eulerAngles.z - 360 : eulerAngles.z;
+        eulerAngles.z += turnSpeed * turnDirection * 10;
+        eulerAngles.z = Mathf.Clamp(eulerAngles.z, 180f, 359f);
+        // Debug.Log("Current eulerAngle.z: " + eulerAngles.z);
         this.transform.rotation = Quaternion.Euler(eulerAngles);
     }
+
+    // private void limRot2(){
+    //     float currentRot = _rigidBody.rotation;
+    //     Debug.Log("In limit rotation, current rotation: " + currentRot);
+    //     if (currentRot > 0f || currentRot < -180f) {
+    //         Debug.Log("Rotation limit reached");
+    //         _rigidBody.angularDrag = 100000f;
+    //     }
+    // }
 
 }
