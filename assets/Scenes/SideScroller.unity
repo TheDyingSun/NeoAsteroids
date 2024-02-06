@@ -936,7 +936,7 @@ MonoBehaviour:
   respawnTime: 3
   invincibilityTime: 3
   gameEndTime: 2
-  lives: 6
+  lives: 3
   score: 0
 --- !u!1 &1622613570 stripped
 GameObject:
