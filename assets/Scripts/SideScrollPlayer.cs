@@ -74,8 +74,7 @@ public class SideScrollPlayer : MonoBehaviour{
 
     private void Shoot(){
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        bullet.Project(this.transform.up, _rigidBody.velocity);
-
+        bullet.Project(this.transform.up, _rigidBody.velocity, _rigidBody.velocity);
     }
 
     private void limRotation() {

@@ -22,7 +22,7 @@ public class Asteroid : MonoBehaviour
 
     private void Awake(){
         spriteRender = GetComponent<SpriteRenderer>();
-        rigidBody = GetComponent<Rigidbody2D>(); 
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Start(){
@@ -30,17 +30,20 @@ public class Asteroid : MonoBehaviour
 
         this.transform.eulerAngles = new Vector3(0f,0f, Random.value * 360.0f);
         this.transform.localScale = Vector3.one * this.size;
+        this.enabled = false;
     }
     
     public void SetTrajectory(Vector2 direction){
         rigidBody.mass = this.size + this.weightOffset;
         rigidBody.AddForce(direction * this.speed);
+        this.enabled = true;
         Destroy(this.gameObject, this.maxLifetime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
         //if colliding with bullet
         if(collision.gameObject.tag == "Bullet"){
+            this.enabled = false;
             if((this.size/2) >= minSize){
                 //Split into 2
                 CreateSplit();
