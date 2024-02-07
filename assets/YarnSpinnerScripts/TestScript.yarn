@@ -1,29 +1,29 @@
 ﻿title: Start
 ---
-Wow!
-My first ever Yarn script in Unity!
+Wow! #line:0769661 
+My first ever Yarn script in Unity! #line:0e504df 
 
--> Gosh!
--> Incredible!
--> I'm amazed!
+-> Gosh! #line:0848d07 
+-> Incredible! #line:0f2cb29 
+-> I'm amazed! #line:02cb14a 
 
-Anyway, time to get writing!
+Anyway, time to get writing! #line:0494dc7 
 ===
 
 title: Scene1
 ---
 
-Yar: Hello there traveler
-Yar: While you're traveling I hope you get to make it to my planet...
-Yar: We have the most beautiful constellations
-Yar: Our solar eclipse festival is coming up.
-Yar: ...
-Yar: ...Sorry, I must be boring you...
+Yar: Hello there traveler #line:08846de 
+Yar: While you're traveling I hope you get to make it to my planet... #line:0d9d58c 
+Yar: We have the most beautiful constellations #line:0388dbd 
+Yar: Our solar eclipse festival is coming up. #line:0290940 
+Yar: ... #line:055729e 
+Yar: ...Sorry, I must be boring you... #line:07be38c 
 
--> No continue
-    Yar: We use the stars to tell our futures...
--> It might be time for me to head out
-    Yar: I wish you well
+-> No continue #line:0b6c931 
+    Yar: We use the stars to tell our futures... #line:0ee6322 
+-> It might be time for me to head out #line:071cae8 
+    Yar: I wish you well #line:0ec5780 
 <<kickPlayerOut>>
 
 ===
