@@ -56,8 +56,10 @@ public class Player : MonoBehaviour{
     }
 
     private void Shoot(){
-        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        bullet.Project(this.transform.up, _rigidBody.velocity);
+        if (Time.timeScale != 0f) {
+            Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+            bullet.Project(this.transform.up, _rigidBody.velocity);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
