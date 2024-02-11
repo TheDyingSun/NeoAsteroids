@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIs/text.uss?fileID=7433441132597879392&amp;guid=de901fdc1b9e54ee398cd56b57b1838c&amp;type=3#text" />
+    <Style src="project://database/Assets/UIs/tutorial.uss?fileID=7433441132597879392&amp;guid=190898faec59048328de888f2038585e&amp;type=3#tutorial" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="Boxes" class="serif" style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center;">
+            <ui:VisualElement name="TutorialBox" class="tutorial-box" style="flex-grow: 0;">
+                <ui:Label tabindex="-1" text="to thrust, use the w key or&#10;up arrow" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TutorialLabel" class="tutorial-text" />
+                <ui:VisualElement name="TutorialImage1" class="tutorial-img" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/thrust.asset?fileID=8600000&amp;guid=8b00f4495015248d28f8023226278edd&amp;type=2#thrust&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="TutorialBox" class="tutorial-box" style="flex-grow: 0;">
+                <ui:Label tabindex="-1" text="to turn, use the a &amp; d keys&#10;or the left and right arrows" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TutorialLabel" class="tutorial-text" />
+                <ui:VisualElement name="TutorialImage2" class="tutorial-img" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/turn.asset?fileID=8600000&amp;guid=03217c0cf016045a2a45518ead8b0802&amp;type=2#turn&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="TutorialBox" class="tutorial-box" style="flex-grow: 0;">
+                <ui:Label tabindex="-1" text="to shoot, use the left mouse&#10;button or space bar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TutorialLabel" class="tutorial-text" />
+                <ui:VisualElement name="TutorialImage3" class="tutorial-img" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/shoot.asset?fileID=8600000&amp;guid=02d34fb3cb9284e9099fb4a889313f37&amp;type=2#shoot&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="press any key" parse-escape-sequences="true" display-tooltip-when-elided="true" class="serif" style="color: rgb(255, 255, 255); font-size: 40px;" />
+    </ui:VisualElement>
+</ui:UXML>
