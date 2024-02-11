@@ -82,9 +82,9 @@ public class SideScrollPlayer : MonoBehaviour{
     private void limRotation() {
         //Code from: https://www.youtube.com/watch?v=dU_6Z3WKdtg 
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles.z = (eulerAngles.z < 180) ? eulerAngles.z - 360 : eulerAngles.z;
+        eulerAngles.z = (eulerAngles.z < 210) ? eulerAngles.z - 360 : eulerAngles.z;
         eulerAngles.z += turnSpeed * turnDirection * 10;
-        eulerAngles.z = Mathf.Clamp(eulerAngles.z, 180f, 359f);
+        eulerAngles.z = Mathf.Clamp(eulerAngles.z, 225f, 315f);
         // Debug.Log("Current eulerAngle.z: " + eulerAngles.z);
         this.transform.rotation = Quaternion.Euler(eulerAngles);
     }
