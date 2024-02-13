@@ -13,20 +13,14 @@ public class Fadescreen : MonoBehaviour {
     }
 
     public void fadeIn() {
-        OnEnable();
-        Debug.Log("Fading in");
-        fade(0);
+        Invoke(nameof(removeOpaqueClass), 0.2f);
+    }
+
+    public void removeOpaqueClass() {
+        container.RemoveFromClassList("opaque");
     }
  
     public void fadeOut() {
-        OnEnable();
-        Debug.Log("Fading out");
-        fade(1);
-    }
-    private void fade(float target) {
-        container.style.opacity = target;
-        container.style.transitionProperty = new List<StylePropertyName> { "opacity" };
-        container.style.transitionDuration = new List<TimeValue> { new TimeValue(1f, TimeUnit.Second) };
-        container.style.transitionTimingFunction = new List<EasingFunction> { EasingMode.Ease };
+        container.AddToClassList("opaque");
     }
 }

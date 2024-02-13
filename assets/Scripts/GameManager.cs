@@ -27,23 +27,8 @@ public class GameManager : MonoBehaviour
     private void Start() {
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
-        // fadescreen.fadeIn();
-        // firstFrame = true;
+        fadescreen.fadeIn();
     }
-
-    // private void Update() {
-    //     if (firstFrame) {
-    //         Debug.Log("Fade in called in Update");
-    //         StartCoroutine(buffer(1));
-    //         firstFrame = false;
-    //     }
-    // }
-
-    // private IEnumerator buffer(float time) {
-    //     fadescreen.fadeIn();
-    //     Debug.Log("1 second should pass");
-    //     yield return new WaitForSeconds(time);
-    // }
 
     private void ExitToMainMenu() {
         SceneManager.LoadScene(sceneName:"MainMenu");
@@ -69,9 +54,7 @@ public class GameManager : MonoBehaviour
 
             if (asteroidsDestroyed >= winAmount) {
                 // update interface
-                if(fadescreen) {
-                    fadescreen.fadeOut();
-                }
+                if (fadescreen) { fadescreen.fadeOut(); }
                 Invoke(nameof(GameOver), gameEndTime);
             }
         }

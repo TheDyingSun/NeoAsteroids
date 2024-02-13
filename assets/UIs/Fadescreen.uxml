@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="container" class="container" style="flex-grow: 1; -unity-background-image-tint-color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 1; -unity-background-image-tint-color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);" />
-    </ui:VisualElement>
+    <Style src="project://database/Assets/UIs/Fadescreen.uss?fileID=7433441132597879392&amp;guid=1965e23cb4f4f7f428e309ba89f711f3&amp;type=3#Fadescreen" />
+    <ui:VisualElement name="container" class="container opaque" style="transition-duration: 1s; transition-property: background-color; flex-grow: 1;" />
 </ui:UXML>
