@@ -2,29 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
     public InGame inGameInterface;
     public ParticleSystem explosion;
+    public Fadescreen fadescreen;
 
     public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
     public float gameEndTime = 2.0f;
     public int lives = 3;
     public int score = 0;
+    
 
     public enum WinCondition {Number, Time, Score};
     public WinCondition winCondition = WinCondition.Number;
     public int winAmount = 20;
 
     private int asteroidsDestroyed = 0;
-
+    private bool firstFrame;
     private void Start() {
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
+        // fadescreen.fadeIn();
+        // firstFrame = true;
     }
+
+    // private void Update() {
+    //     if (firstFrame) {
+    //         Debug.Log("Fade in called in Update");
+    //         StartCoroutine(buffer(1));
+    //         firstFrame = false;
+    //     }
+    // }
+
+    // private IEnumerator buffer(float time) {
+    //     fadescreen.fadeIn();
+    //     Debug.Log("1 second should pass");
+    //     yield return new WaitForSeconds(time);
+    // }
 
     private void ExitToMainMenu() {
         SceneManager.LoadScene(sceneName:"MainMenu");
@@ -50,6 +69,9 @@ public class GameManager : MonoBehaviour
 
             if (asteroidsDestroyed >= winAmount) {
                 // update interface
+                if(fadescreen) {
+                    fadescreen.fadeOut();
+                }
                 Invoke(nameof(GameOver), gameEndTime);
             }
         }
