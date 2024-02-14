@@ -9,6 +9,8 @@ public class InGame : MonoBehaviour
     VisualElement life_1;
     VisualElement life_2;
     VisualElement life_3;
+    Label winConditionText;
+    Label winProgress;
 
     void Start()
     {
@@ -19,6 +21,23 @@ public class InGame : MonoBehaviour
         life_1 = root.Q<VisualElement>("life_1");
         life_2 = root.Q<VisualElement>("life_2");
         life_3 = root.Q<VisualElement>("life_3");
+
+        winConditionText = root.Q<Label>("win_condition");
+        winProgress = root.Q<Label>("progress");
+    }
+
+    public void updateWinCondition(GameManager.WinCondition condition) {
+        switch (condition) {
+            case GameManager.WinCondition.Number:
+                winConditionText.text = "asteroids left:";
+                break;
+            case GameManager.WinCondition.Time:
+                winConditionText.text = "time left:";
+                break;
+            case GameManager.WinCondition.Score:
+                winConditionText.text = "score left:";
+                break;
+        }
     }
 
     public void updateScore(int score) {
@@ -48,5 +67,9 @@ public class InGame : MonoBehaviour
                 life_3.style.display = DisplayStyle.Flex;
                 break;  
         }
+    }
+
+    public void updateWinProgress(string newText) {
+        winProgress.text = newText;
     }
 }

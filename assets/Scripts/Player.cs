@@ -17,6 +17,9 @@ public class Player : MonoBehaviour{
     public Color defaultCol;
     public Color respawnColor;
 
+    private float lastBulletFire = 0f;
+    public float bulletCooldown = 0.15f;
+
     public Animator animator;
 
     private void Awake(){
@@ -37,7 +40,12 @@ public class Player : MonoBehaviour{
             turnDirection = 0.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+        // handle bullet firing
+        lastBulletFire += Time.deltaTime;
+        bool tryingToFire = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+        bool canFire = lastBulletFire > bulletCooldown;
+        if (tryingToFire && canFire) {
+            lastBulletFire = 0f;
             Shoot();
         }
     }
@@ -48,10 +56,10 @@ public class Player : MonoBehaviour{
     }
 
     private void Shoot(){
-        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        Debug.Log(this.transform.up.magnitude);
-        Debug.Log(_rigidBody.velocity.magnitude);
-        bullet.Project(this.transform.up, _rigidBody.velocity);
+        if (Time.timeScale != 0f) {
+            Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+            bullet.Project(this.transform.up, _rigidBody.velocity);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision){

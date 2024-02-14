@@ -17,8 +17,8 @@ public class PauseScreenController : MonoBehaviour
     
     private void Update() {
         if (Input.GetKey("escape") || Input.GetKey(KeyCode.N)) {
+            Time.timeScale = 0f;
             this.pauseScreen.gameObject.SetActive(true);
-            
         }
     }
     

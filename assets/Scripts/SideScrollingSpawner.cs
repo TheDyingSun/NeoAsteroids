@@ -5,49 +5,30 @@ public class SideScrollingSpawner : MonoBehaviour{
 
     public Asteroid asteroidPrefab;
     public float spawnRate = 2.0f;
-    public int spawnAmount = 1;
 
     public float spawnDistance = 15.0f;
     public float spawnSpeed = 50.0f;
 
-    // public Vector3 testDirection;
-    // public Vector2 testTrajectory;
-    // public float testSlope;
-
-    float trajectoryVariance = 10.0f;
+    public float spawnAngleVariance = 45.0f;
+    public float trajectoryAngleVariance = 10.0f;
 
 
     private void Start(){
-        InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
-
-        //asteroidPrefab = GetComponent<Asteroid>();
-
+        InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
     }
 
+    private void Spawn() {
+        float spawnAngle = Random.Range(-spawnAngleVariance, spawnAngleVariance);
+        Vector3 spawnLocation = Quaternion.Euler(0f, 0f, spawnAngle) * new Vector3(spawnDistance, 0f, 0f);
+        spawnLocation += new Vector3(-5f, 0f, 0f); // make asteroids target player instead of center
+        
+        float trajectoryVariance = Random.Range(-trajectoryAngleVariance, trajectoryAngleVariance);
+        Vector3 trajectory = Quaternion.Euler(0f, 0f, spawnAngle + trajectoryVariance) * new Vector3(-1f, 0f, 0f);
 
-    private void Spawn(){
-        for (int i = 0; i < this.spawnAmount; i++){
-            //Spawn direction can only be right of the player, can't be behind
-            Vector3 spawnDirection = Random.insideUnitCircle.normalized * this.spawnDistance;
-            // testDirection = spawnDirection;
-            if ((spawnDirection.x + this.transform.position.x) < -6.0f) {
-                spawnDirection.x = Mathf.Abs(spawnDirection.x);
-                spawnDirection.y = Mathf.Abs(spawnDirection.y);
-            }
-            Vector3 spawnPoint = spawnDirection + this.transform.position;
-            
-
-            float variance = Random.Range(-this.trajectoryVariance, this.trajectoryVariance);
-            Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
-
-            Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
-            asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
-            asteroid.speed = spawnSpeed;
-            asteroid.SetTrajectory(rotation * -spawnDirection / this.spawnDistance);
-        }
-
-
+        Asteroid asteroid = Instantiate(asteroidPrefab, spawnLocation, Quaternion.identity);
+        asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
+        asteroid.speed = spawnSpeed;
+        
+        asteroid.SetTrajectory(trajectory);
     }
-
-
 }

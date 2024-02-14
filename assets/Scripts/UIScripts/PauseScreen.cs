@@ -28,11 +28,13 @@ public class PauseScreen : MonoBehaviour{
         returnToMenuButton.clicked += () => ExitToMainMenu();
         exitGameButton.clicked += () => ConfirmExit();
         resumeButton.clicked += () => CloseSelf();
+        restartButton.clicked += () => RestartLevel();
         
     }
 
 
     private void ExitToMainMenu() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName:"MainMenu");
 
     }
@@ -43,8 +45,14 @@ public class PauseScreen : MonoBehaviour{
     }
 
     private void CloseSelf(){
+        Time.timeScale = 1f;
         this.gameObject.SetActive(false);
 
+    }
+
+    private void RestartLevel() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
