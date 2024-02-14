@@ -10,6 +10,8 @@ public class MainLevelSelector : MonoBehaviour
     VisualElement root;
     Button staticLevelSelector, sideScrollLevelSelector, cutSceneLevelSelector;
 
+    Label previousScene;
+
     void OnEnable(){
 
         root = GetComponent<UIDocument>().rootVisualElement;
@@ -17,6 +19,9 @@ public class MainLevelSelector : MonoBehaviour
         staticLevelSelector = root.Q<Button>("StaticLevelSelector");
         sideScrollLevelSelector = root.Q<Button>("SideScrollLevelSelector");
         cutSceneLevelSelector = root.Q<Button>("CutSceneLevelSelector");
+
+        previousScene = root.Q<Label>("PreviousSceneLabel");
+        previousScene.text = SceneStateManager.currentStage;
 
         //Setup eventlisteners
         staticLevelSelector.clicked += () => ChangeToStaticLevel();
@@ -26,16 +31,19 @@ public class MainLevelSelector : MonoBehaviour
     }
 
     private void ChangeToStaticLevel(){
+        SceneStateManager.ChangeCurrentStage("Static");
         SceneManager.LoadScene(sceneName:"Asteroids");
 
     }
 
     private void ChangeToSideScrollLevel(){
+        SceneStateManager.ChangeCurrentStage("SideScroller");
         SceneManager.LoadScene(sceneName:"SideScroller");
 
     }
 
     private void ChangeToCutScene(){
+        SceneStateManager.ChangeCurrentStage("CutScene");
         SceneManager.LoadScene(sceneName:"CutScene");
 
     }

@@ -1,0 +1,29 @@
+﻿title: BroughIntroduction
+tags:
+---
+
+(Transition, whoosh)
+
+???: Hello there
+???: Do you mind if I sit with you?
+-> Sure
+    Brough: I'm one of the Brough from Arshira
+    Brough: You seem far from home
+    -> Sort of
+        Brough: I see you're space command
+        Brough: My people run this outpost
+        Brough: I hope you can come by our planet sometime
+        Brough: We make wonderful root beer
+        Brough: Maybe not Terran root beer
+        Brough: But it feels like tasting the stars
+        Brough: Hope to see you soon
+
+        <<jump TheDecision>>
+-> Nah, fuck you
+    ???: ...
+    ???: ;^;
+
+    <<kickPlayerOut>>
+
+
+===

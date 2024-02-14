@@ -1,0 +1,57 @@
+﻿title: Endings
+tags:
+---
+
+===
+
+title: YarEnding
+tags:
+---
+(Transition, whoosh)
+Yar: That was close...
+Yar: ...
+Yar: It's a shame Heileigh had to be destroyed
+Brough: Atleast we didn't die
+Yar: Hah, yeah...
+Brough: Thank you for responding when I reached out 
+Yar: You don't have to thank me, it's just good to know you're ok
+
+The Yar and Brough turn to you.
+
+Yar: And thank you for keeping Heileigh safe for all of us.
+
+
+
+
+<<jump ConvergedEnding>>
+===
+
+title: BroughEnding
+tags:
+---
+(Transition, whoosh)
+Brough: Phew, thanks mate
+Brough: I was talking with my partner right before the storms
+Brough: So while Arshira is gone...
+Yar: We're not
+Brough: Heh 
+
+The Brough and Yar turn to you.
+
+Brough: And thank you for keeping Arshira safe for all of us.
+
+
+<<jump ConvergedEnding>>
+===
+
+title: ConvergedEnding
+tags:
+---
+Yar: We're just glad we can stay with eachother through this
+Brough: things will turn out ok
+Yar & Brough: Thank you
+
+Thank you for playing
+
+<<kickPlayerOut>>
+===
