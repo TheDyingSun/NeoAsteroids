@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5030564666409649559}
+  m_Father: {fileID: 6168206712520493382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8148225602111933641
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: c1e0c160c867c7d46a0072d1f178fbee, type: 2}
-  m_ParentUI: {fileID: 4065640149770327904}
+  m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 7bb596b5e26f193488347f6901641a6d, type: 3}
   m_SortingOrder: 1
 --- !u!114 &6413531247116706248
@@ -92,6 +92,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5030564666409649559}
+  - {fileID: 8414911619198512276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8577246539495786349
@@ -137,8 +138,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8414911619198512276}
+  m_Children: []
   m_Father: {fileID: 6168206712520493382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4065640149770327904

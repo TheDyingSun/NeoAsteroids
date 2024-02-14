@@ -1,0 +1,21 @@
+﻿title: TheDecision
+tags:
+---
+
+(Transition, whoosh)
+
+Space Command: ...
+Space Command: We have some bad news
+Space Command: We have just discovered that there are two planets nearby to your location
+Space Command: Both will be hit by asteroids storms that may possibly...
+Space Command: ...
+Space Command: ...wipe out their planets
+Space Command: Backup won't reach you in time.
+Space Command: There's Heileigh, with the Yar
+Space Command: And there's Ashira, the the Brough
+Space Command: Where do you want us to send you to?
+-> Send me to the Yar
+    <<jump YarEnding>>
+-> Send me to the Brough
+    <<jump BroughEnding>>
+===

@@ -1,0 +1,35 @@
+title: YarIntroduction
+tags:
+---
+
+(Transition, whoosh)
+
+You're fueling up your ship
+An alien approaches you as you place the charger on your ship
+
+???: Hello there
+-> Wave to the figure
+    ???: I'm one of the Yar
+    Yar: While you're traveling I hope you get to make it to my planet... 
+    Yar: We have the most beautiful constellations 
+    Yar: Our solar eclipse festival is coming up. 
+    Yar: ... 
+    Yar: ...Sorry, I must be boring you...
+
+    -> No continue 
+        Yar: We use the stars to tell our futures...
+        Yar: They recently said there would be some sort of tension
+        Yar: You're from the SpaceForce(TM)
+        SpaceForce(TM) is trademark all rights reserved of the company, the company owns the entirety of SpaceForce(TM), SPACEFORCE, and spaaaaaceForce. the company owns and operates your ship and keeps you going. Sponsored by Yar electric and Brough root beer
+        Yar: If anything happens, we hope you will help us.
+        Yar: Thank you for your time
+    -> It might be time for me to head out 
+        Yar: I wish you well 
+
+<<jump BroughIntroduction>>
+
+
+<<kickPlayerOut>>
+
+
+===

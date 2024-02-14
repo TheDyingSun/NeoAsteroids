@@ -14,4 +14,5 @@ public class BackgroundScroll : MonoBehaviour
     {
         img.uvRect = new Rect(img.uvRect.position + new Vector2(x, y) * Time.deltaTime * speed, img.uvRect.size);
     }
+
 }
