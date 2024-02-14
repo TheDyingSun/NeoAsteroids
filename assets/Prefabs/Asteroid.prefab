@@ -179,10 +179,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca93f0ee0b80a4f169ebab9ee159d785, type: 3}
   - {fileID: 21300000, guid: b4f3e19779b2948dfbf6e99ad51dbe50, type: 3}
   damageClip: {fileID: 8300000, guid: 4ac895b681d8541f5a21f354d835e7e9, type: 3}
-  maxSize: 2
-  minSize: 0.5
+  warningPrefab: {fileID: 7502270731353387425, guid: 9c50315e18cad4301ba9434548ea59fe, type: 3}
+  maxSize: 1.25
+  minSize: 0.75
   size: 1
-  speed: 300
+  speed: 200
   weightOffset: 2
   maxLifetime: 30
 --- !u!82 &9089068182611617780
