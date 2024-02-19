@@ -11,11 +11,6 @@ public class Planet : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        setStatic(0); // remove once scene manager is set up
-    }
-
     void Update()
     {
         // perform rotation and translation
@@ -32,6 +27,14 @@ public class Planet : MonoBehaviour
             Random.Range(-3f, 3f),
             Random.Range(-2f, 2f), 0f );
         transform.localScale = new Vector3(0.35f, 0.35f, 1f);
+        rotationSpeed = Random.Range(-0.003f, 0.003f);
+        spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+    public void setSidescroll(int spriteIndex) {
+        velocity = new Vector3(-0.001f, Random.Range(-0.0002f, 0.0002f), 0f);
+        transform.position = new Vector3(16f, Random.Range(-1f, 1f), 0f);
+        transform.localScale = new Vector3(0.7f, 0.7f, 1f);
         rotationSpeed = Random.Range(-0.003f, 0.003f);
         spriteRenderer.sprite = sprites[spriteIndex];
     }

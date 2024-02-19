@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public InGame inGameInterface;
     public ParticleSystem explosion;
     public Fadescreen fadescreen;
+    public Planet planet;
 
     public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
+        if (winCondition == WinCondition.Number || winCondition == WinCondition.Score) {
+            planet.setStatic(1);
+        }
 
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
@@ -94,9 +98,9 @@ public class GameManager : MonoBehaviour
             if (timeRemaining <= 0f) {
                 if (fadescreen) fadescreen.fadeOut();
                 Invoke(nameof(GameOver), gameEndTime);
-            } else if (timeRemaining <= 10f && !signalledPlanet) {
+            } else if (timeRemaining <= 20f && !signalledPlanet) {
                 signalledPlanet = true;
-                Debug.Log("signal planet");
+                planet.setSidescroll(1);
             }
         }
     }

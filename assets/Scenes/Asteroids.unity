@@ -927,6 +927,7 @@ MonoBehaviour:
   inGameInterface: {fileID: 864423863}
   explosion: {fileID: 1670478344}
   fadescreen: {fileID: 624380225}
+  planet: {fileID: 5925570415700174898}
   respawnTime: 3
   invincibilityTime: 3
   gameEndTime: 2
@@ -6315,6 +6316,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4264beb1d7245969015e6c852fc290, type: 3}
+--- !u!114 &5925570415700174898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5982011021197329849, guid: 0f4264beb1d7245969015e6c852fc290, type: 3}
+  m_PrefabInstance: {fileID: 5925570415700174897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9945e188b8ad54b24aa306f32667da0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8231287724273697690
 PrefabInstance:
   m_ObjectHideFlags: 0
