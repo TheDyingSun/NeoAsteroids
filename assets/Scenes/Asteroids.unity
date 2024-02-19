@@ -6310,10 +6310,6 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0.002
       objectReference: {fileID: 0}
-    - target: {fileID: 6897556984701274393, guid: 0f4264beb1d7245969015e6c852fc290, type: 3}
-      propertyPath: m_Color.a
-      value: 0.3137255
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

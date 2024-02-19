@@ -21,10 +21,16 @@ public class GameManager : MonoBehaviour
     public enum WinCondition {Number, Time, Score};
     public WinCondition winCondition = WinCondition.Number;
     public int winAmount = 20;
+    private int minutesRemaining, secondsRemaining;
+    private bool signalledPlanet = false;
 
     private int asteroidsDestroyed = 0;
     private bool firstFrame;
+    private float timeRemaining;
+
     private void Start() {
+        if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
+
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
         fadescreen.fadeIn();
@@ -71,7 +77,30 @@ public class GameManager : MonoBehaviour
         inGameInterface.updateLives(this.lives);
     }
 
-    // Update is called once per frame
+    private void Update() {
+        // update timer
+        if (winCondition == WinCondition.Time) {
+            timeRemaining -= Time.deltaTime;
+
+            int minutesRemaining = (int) timeRemaining / 60;
+            int newSecondsRemaining = (int) timeRemaining % 60;
+
+            if (newSecondsRemaining != secondsRemaining) {
+                secondsRemaining = newSecondsRemaining;
+                string newText = minutesRemaining + ":" + secondsRemaining.ToString("D2");
+                inGameInterface.updateWinProgress(newText);
+            }
+
+            if (timeRemaining <= 0f) {
+                if (fadescreen) fadescreen.fadeOut();
+                Invoke(nameof(GameOver), gameEndTime);
+            } else if (timeRemaining <= 10f && !signalledPlanet) {
+                signalledPlanet = true;
+                Debug.Log("signal planet");
+            }
+        }
+    }
+
     private void Respawn(){
         this.player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
         this.player.animator.SetBool("invincible", true);
@@ -91,5 +120,4 @@ public class GameManager : MonoBehaviour
         this.player.gameObject.SetActive(false);
         ExitToMainMenu();
     }
-
 }
