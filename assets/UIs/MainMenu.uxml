@@ -4,8 +4,9 @@
     <ui:VisualElement name="Container" style="flex-grow: 1; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; justify-content: space-around; padding-top: 150px; padding-right: 150px; padding-bottom: 150px; padding-left: 150px; background-image: url(&apos;project://database/Assets/Sprites/stars%20background.jpg?fileID=2800000&amp;guid=4600a465a892fa64f8fffa134132b199&amp;type=3#stars background&apos;); align-items: flex-start;">
         <ui:Label tabindex="-1" text="neo-asteroids" parse-escape-sequences="true" display-tooltip-when-elided="true" class="sans-serif" style="font-size: 100px; color: rgb(255, 255, 255);" />
         <ui:VisualElement name="MainButtons" class="serif" style="flex-grow: 0; flex-shrink: 1; align-items: flex-start; justify-content: center; font-size: 50px;">
-            <ui:Button text="play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" class="button" />
-            <ui:Button text="options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OptionsButton" class="button" />
+            <ui:Button text="story mode" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StoryButton" class="button" />
+            <ui:Button text="arcade mode" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ArcadeButton" class="button" />
+            <ui:Button text="exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="button" />
         </ui:VisualElement>
         <ui:VisualElement name="SubButtons" class="serif" style="flex-grow: 0; justify-content: flex-start; flex-direction: row; align-items: center; font-size: 30px;">
             <ui:Button text="credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreditsButton" class="button" />

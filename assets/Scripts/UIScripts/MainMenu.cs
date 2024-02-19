@@ -6,25 +6,32 @@ public class MainMenu : MonoBehaviour
 {
 
     VisualElement root;
-    Button playButton, optionsButton, creditsButton, initialButton, versionButton;
+    Button storyButton, arcadeButton, exitButton, creditsButton, initialButton, versionButton;
 
     void OnEnable(){
         root = GetComponent<UIDocument>().rootVisualElement;
         
-        playButton = root.Q<Button>("PlayButton");
-        optionsButton = root.Q<Button>("OptionsButton");
+        storyButton = root.Q<Button>("StoryButton");
+        arcadeButton = root.Q<Button>("ArcadeButton");
+        exitButton = root.Q<Button>("ExitButton");
         creditsButton = root.Q<Button>("CreditsButton");
         initialButton = root.Q<Button>("InitialButton");
         versionButton = root.Q<Button>("VersionButton");
 
-        playButton.clicked += () => Play();
+        storyButton.clicked += () => Story();
+        arcadeButton.clicked += () => Story();
+        exitButton.clicked += () => Exit();
         creditsButton.clicked += () => Credits();
         initialButton.clicked += () => Initial_Build();
         versionButton.clicked += () => Version_Notes(); 
     }
 
-    public void Play() {
+    public void Story() {
         SceneManager.LoadScene(sceneName:"LevelSelection");
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 
     public void Initial_Build() {
