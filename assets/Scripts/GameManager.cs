@@ -24,10 +24,14 @@ public class GameManager : MonoBehaviour
 
     private int asteroidsDestroyed = 0;
     private bool firstFrame;
+
+    private void OnEnable(){
+        fadescreen.fadeIn();
+
+    }
     private void Start() {
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
-        fadescreen.fadeIn();
     }
 
     private void ExitToMainMenu() {
