@@ -36,15 +36,15 @@ public class SideScrollPlayer : MonoBehaviour{
 
     private void Update(){
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            turnVelocity = Mathf.Min(turnVelocity + turnAccel, turnVelocityCap);
+            turnVelocity = Mathf.Min(turnVelocity + turnAccel * Time.deltaTime * 100, turnVelocityCap * 100);
         } else  if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-            turnVelocity = Mathf.Max(turnVelocity - turnAccel, -turnVelocityCap);
+            turnVelocity = Mathf.Max(turnVelocity - turnAccel * Time.deltaTime * 100, -turnVelocityCap * 100);
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
-            verticalVelocity = Mathf.Min(verticalVelocity + verticalAccel / 100f, verticalVelocityCap);
+            verticalVelocity = Mathf.Min(verticalVelocity + verticalAccel * Time.deltaTime, verticalVelocityCap);
         } else  if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
-            verticalVelocity = Mathf.Max(verticalVelocity - verticalAccel / 100f, -verticalVelocityCap);
+            verticalVelocity = Mathf.Max(verticalVelocity - verticalAccel * Time.deltaTime, -verticalVelocityCap);
         }
 
         // handle bullet firing
@@ -55,15 +55,13 @@ public class SideScrollPlayer : MonoBehaviour{
             lastBulletFire = 0f;
             Shoot();
         }
-    }
 
-    private void FixedUpdate(){
-        transform.position = new Vector3(-5f, transform.position.y + verticalVelocity, 0f);
-        angle += turnVelocity;
+        transform.position = new Vector3(-5f, transform.position.y + verticalVelocity * Time.deltaTime, 0f);
+        angle += turnVelocity * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        verticalVelocity *= 0.98f;
-        turnVelocity *= 0.98f;
+        verticalVelocity *= 0.999f;
+        turnVelocity *= 0.999f;
     }
 
     private void Shoot(){

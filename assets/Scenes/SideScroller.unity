@@ -1111,10 +1111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3274511626109633122, guid: c2ebcc98093474de79d8d02cc8f96f71, type: 3}
-  verticalAccel: 0.015
-  turnAccel: 0.02
-  verticalVelocityCap: 0.3
-  turnVelocityCap: 15
+  verticalAccel: 8
+  turnAccel: 5
+  verticalVelocityCap: 100
+  turnVelocityCap: 100
   spriteRenderer: {fileID: 1622613571}
   damageClip: {fileID: 8300000, guid: 23a4b1bb6751e4f90ac48acf5a7df676, type: 3}
   defaultCol: {r: 0.007843138, g: 0.9843137, b: 0.8392157, a: 1}

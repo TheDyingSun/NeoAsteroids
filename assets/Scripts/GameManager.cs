@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
-        fadescreen.fadeIn();
+        if (fadescreen) fadescreen.fadeIn();
     }
 
     private void ExitToMainMenu() {
@@ -62,23 +62,20 @@ public class GameManager : MonoBehaviour
             int asteroidsLeft = this.winAmount - this.asteroidsDestroyed;
             this.inGameInterface.updateWinProgress(asteroidsLeft.ToString("D"));
 
-            if (asteroidsDestroyed >= winAmount) {
-                // update interface
-                if (fadescreen) { fadescreen.fadeOut(); }
-                Invoke(nameof(GameOver), gameEndTime);
-            }
+            if (asteroidsDestroyed >= winAmount) GameOver();
         }
     }
 
     public void PlayerDied(){
-        if (this.lives <= 0){ Invoke(nameof(GameOver), gameEndTime); } 
-        else { Respawn(); }
-
         this.explosion.transform.position  = this.player.transform.position; 
         this.explosion.Play();
         this.lives--;
 
         inGameInterface.updateLives(this.lives);
+
+
+        if (this.lives <= 0) GameOver();
+        else { Respawn(); }
     }
 
     private void Update() {
@@ -96,8 +93,7 @@ public class GameManager : MonoBehaviour
             }
 
             if (timeRemaining <= 0f) {
-                if (fadescreen) fadescreen.fadeOut();
-                Invoke(nameof(GameOver), gameEndTime);
+                GameOver();
             } else if (timeRemaining <= 20f && !signalledPlanet) {
                 signalledPlanet = true;
                 planet.setSidescroll(1);
@@ -117,11 +113,12 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver(){
-        this.lives = 0;
-        this.score = 0;
-        inGameInterface.updateLives(this.lives);
-        inGameInterface.updateScore(this.score);
-        this.player.gameObject.SetActive(false);
-        ExitToMainMenu();
+        fadescreen.fadeOut();
+        lives = 0;
+        score = 0;
+        inGameInterface.updateLives(lives);
+        inGameInterface.updateScore(score);
+        player.gameObject.SetActive(false);
+        Invoke(nameof(ExitToMainMenu), gameEndTime);
     }
 }
