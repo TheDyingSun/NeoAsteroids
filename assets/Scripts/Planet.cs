@@ -26,7 +26,7 @@ public class Planet : MonoBehaviour
         transform.position = new Vector3(
             Random.Range(-3f, 3f),
             Random.Range(-2f, 2f), 0f );
-        transform.localScale = new Vector3(0.35f, 0.35f, 1f);
+        transform.localScale = new Vector3(0.5f, 0.5f, 1f);
         rotationSpeed = Random.Range(-0.003f, 0.003f);
         spriteRenderer.sprite = sprites[spriteIndex];
     }

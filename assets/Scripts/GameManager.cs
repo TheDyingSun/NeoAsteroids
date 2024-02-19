@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void AsteroidDestroyed(Asteroid asteroid){
-        if (asteroid.size < 0.75){
+        if (asteroid.size < 0.75) {
             score += 200;
-        } else if(asteroid.size < 1){
+        } else if(asteroid.size < 1) {
             score += 150;
         } else {
             score += 100;
