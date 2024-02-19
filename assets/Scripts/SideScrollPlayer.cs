@@ -55,8 +55,9 @@ public class SideScrollPlayer : MonoBehaviour{
             lastBulletFire = 0f;
             Shoot();
         }
-
-        transform.position = new Vector3(-5f, transform.position.y + verticalVelocity * Time.deltaTime, 0f);
+        float newY = transform.position.y + verticalVelocity * Time.deltaTime;
+        newY = Mathf.Clamp(newY, -4f, 4f);
+        transform.position = new Vector3(-5f, newY, 0f);
         angle += turnVelocity * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
