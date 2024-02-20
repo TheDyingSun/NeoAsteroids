@@ -6273,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fadescreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1036201851840346020, guid: b17223e63011a124f850c2841b153fb8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
