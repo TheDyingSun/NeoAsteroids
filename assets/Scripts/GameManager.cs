@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver(){
+        StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
         fadescreen.fadeOut();
         lives = 0;
         score = 0;
