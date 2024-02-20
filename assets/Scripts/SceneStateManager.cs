@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneStateManager : MonoBehaviour{
     public static string currentStage = "Debug Text";
 
+    public static bool arcadeMode = false;
+
+    public bool ChoseYar = true; //Choosing yar is the default
+    public static CurrentLevel currentLevel = CurrentLevel.Introduction;
+
 
     public static void ChangeCurrentStage(string input){
 
@@ -15,8 +20,31 @@ public class SceneStateManager : MonoBehaviour{
 
 
     public static void NextLevel(){
+        if(arcadeMode){
+            SceneManager.LoadScene(sceneName:"LevelSelection");
 
-        SceneManager.LoadScene(sceneName:"MainMenu");
+        } else {
+
+        currentLevel++;
+
+            if(currentLevel == CurrentLevel.Introduction || currentLevel == CurrentLevel.FirstCutScene || currentLevel == CurrentLevel.SecondCutScene || 
+            currentLevel == CurrentLevel.ThirdCutScene || currentLevel == CurrentLevel.FourthCutScene){
+                SceneManager.LoadScene(sceneName:"CutScene");
+            }
+
+            if(currentLevel == CurrentLevel.IntroStatic || currentLevel == CurrentLevel.SecondStatic || currentLevel == CurrentLevel.FourthStatic){
+                SceneManager.LoadScene(sceneName:"Asteroids");
+            }
+
+            if(currentLevel == CurrentLevel.FirstSideScroll || currentLevel == CurrentLevel.ThirdSideScroll){
+                SceneManager.LoadScene(sceneName:"SideScroll");
+            }
+
+            if(currentLevel == CurrentLevel.FinalCutScene){
+                SceneManager.LoadScene(sceneName:"Credits");
+            }
+
+        }
 
     }
 
