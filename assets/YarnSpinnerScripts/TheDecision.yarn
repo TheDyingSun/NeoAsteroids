@@ -16,7 +16,6 @@ Space Command: And there's Ashira, the the Brough
 Space Command: Where do you want us to send you to?
 -> Send me to the Yar
     <<YarEndingChosen>>
-
 -> Send me to the Brough
     <<BroughEndingChosen>>
 

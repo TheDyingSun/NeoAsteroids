@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
+        if(Input.GetKey(KeyCode.I)){
+            LevelPassed();
+        }
         // update timer
         if (winCondition == WinCondition.Time) {
             timeRemaining -= Time.deltaTime;
