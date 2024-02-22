@@ -12,12 +12,12 @@ public class GameManager : MonoBehaviour
     public Fadescreen fadescreen;
     public Planet planet;
 
+
     public float respawnTime = 3.0f;
     public float invincibilityTime = 3.0f;
     public float gameEndTime = 2.0f;
     public int lives = 3;
     public int score = 0;
-    
 
     public enum WinCondition {Number, Time, Score};
     public WinCondition winCondition = WinCondition.Number;
@@ -26,11 +26,14 @@ public class GameManager : MonoBehaviour
     private bool signalledPlanet = false;
 
     private int asteroidsDestroyed = 0;
-    private bool firstFrame;
     private float timeRemaining;
+    private bool hasPassed = false;
+    private int planetSprite = 0;
 
     private void Start() {
         SetDifficulty();
+        if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
+        else planet.setStatic(planetSprite);
 
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
@@ -76,9 +79,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKey(KeyCode.I)){
-            LevelPassed();
-        }
+        // allow level skip
+        if (Input.GetKey(KeyCode.I)) LevelPassed();
+
         // update timer
         if (winCondition == WinCondition.Time) {
             timeRemaining -= Time.deltaTime;
@@ -93,10 +96,11 @@ public class GameManager : MonoBehaviour
             }
 
             if (timeRemaining <= 0f) {
+
                 LevelPassed();
             } else if (timeRemaining <= 20f && !signalledPlanet) {
                 signalledPlanet = true;
-                planet.setSidescroll(1);
+                planet.setSidescroll(planetSprite);
             }
         }
     }
@@ -116,7 +120,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
         fadescreen.fadeOut();
         player.gameObject.SetActive(false);
-        Invoke(nameof(SceneStateManager.NextLevel), gameEndTime);
+        Invoke(nameof(NextLevel), gameEndTime);
     }
 
     private void SetDifficulty() {
@@ -124,29 +128,30 @@ public class GameManager : MonoBehaviour
             case CurrentLevel.IntroStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 20;
-                planet.setStatic(0);
+                planetSprite = 0;
                 break;
             case CurrentLevel.FirstSideScroll:
                 winCondition = WinCondition.Time;
                 winAmount = 60;
-                planet.setSidescroll(1);
+                planetSprite = 1;
                 break;
             case CurrentLevel.SecondStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 30;
-                planet.setStatic(1);
+                planetSprite = 1;
                 break;
             case CurrentLevel.ThirdSideScroll:
                 winCondition = WinCondition.Time;
                 winAmount = 90;
+                planetSprite = 2;
                 break;
             case CurrentLevel.FourthStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 45;
                 if (SceneStateManager.YarChosen) {
-                    planet.setStatic(2);
+                    planetSprite = 2;
                 } else {
-                    planet.setStatic(3);
+                    planetSprite = 3;
                 }
                 break;
             default:
@@ -156,10 +161,13 @@ public class GameManager : MonoBehaviour
     }
 
     private void LevelPassed(){
-        StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
-        fadescreen.fadeOut();
-        player.gameObject.SetActive(false);
-        Invoke(nameof(NextLevel), gameEndTime);
+        if (!hasPassed) {
+            hasPassed = true;
+            StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
+            fadescreen.fadeOut();
+            player.gameObject.SetActive(false);
+            Invoke(nameof(NextLevel), gameEndTime);
+        }
     }
 
     private void NextLevel() {

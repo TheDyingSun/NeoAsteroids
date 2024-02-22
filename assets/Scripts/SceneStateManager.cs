@@ -16,8 +16,8 @@ public class SceneStateManager : MonoBehaviour{
         if(arcadeMode){
             SceneManager.LoadScene(sceneName:"LevelSelection");
         } else {
-            Debug.Log(currentLevel);
             currentLevel++;
+            Debug.Log("Launching level: " + currentLevel);
 
             if(currentLevel == CurrentLevel.Introduction || currentLevel == CurrentLevel.FirstCutScene || currentLevel == CurrentLevel.SecondCutScene || currentLevel == CurrentLevel.ThirdCutScene || currentLevel == CurrentLevel.FourthCutScene || currentLevel == CurrentLevel.FinalCutScene){
                 SceneManager.LoadScene(sceneName:"CutScene");

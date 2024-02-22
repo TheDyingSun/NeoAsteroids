@@ -29,8 +29,5 @@ public class YarnCommands : MonoBehaviour
     [YarnCommand("NextLevel")]
     public static void NextLevelFromYarn(){
         SceneStateManager.NextLevel();
-
     }
-
-
 }

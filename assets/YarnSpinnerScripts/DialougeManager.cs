@@ -4,13 +4,10 @@ using UnityEngine;
 using Yarn.Unity;
 
 public class DialougeManager : MonoBehaviour{
-
     public DialogueRunner dialogueRunner;
-    
     
     // Start is called before the first frame update
     public void Start() {
-
         switch(SceneStateManager.currentLevel){
             case CurrentLevel.Introduction:
                 dialogueRunner.StartDialogue("Introduction");
@@ -34,20 +31,12 @@ public class DialougeManager : MonoBehaviour{
             break;
 
             case CurrentLevel.FinalCutScene:
-                if(SceneStateManager.YarChosen){
+                if (SceneStateManager.YarChosen){
                     dialogueRunner.StartDialogue("YarEnding");
                 } else {
                     dialogueRunner.StartDialogue("BroughEnding");
                 }
-
-
             break;
-
-
-
-        }
-
-        
+        } 
     }
-
 }

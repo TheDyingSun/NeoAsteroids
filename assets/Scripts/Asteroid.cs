@@ -20,6 +20,7 @@ public class Asteroid : MonoBehaviour
     private void Awake(){
         spriteRender = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
+        SetDifficulty();
     }
 
     private void Start(){
@@ -66,5 +67,30 @@ public class Asteroid : MonoBehaviour
         half.child = true;
         half.size = this.size * 0.5f;
         half.SetTrajectory(Random.insideUnitCircle.normalized);
+    }
+
+    private void SetDifficulty() {
+        switch (SceneStateManager.currentLevel) {
+            case CurrentLevel.IntroStatic:
+                minSize = 0.75f;
+                maxSize = 1.25f;
+                speed = 200f;
+                break;
+            case CurrentLevel.FirstSideScroll:
+                minSize = 0.5f;
+                maxSize = 1.5f;
+                speed = 300f;
+                break;
+            case CurrentLevel.SecondStatic:
+                minSize = 0.5f;
+                maxSize = 2f;
+                speed = 300f;
+                break;
+            case CurrentLevel.ThirdSideScroll:
+                minSize = 0.5f;
+                maxSize = 2f;
+                speed = 400f;
+                break;
+        }
     }
 }
