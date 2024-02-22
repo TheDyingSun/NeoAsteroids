@@ -17,13 +17,11 @@ tags:
         Brough: Maybe not Terran root beer
         Brough: But it feels like tasting the stars
         Brough: Hope to see you soon
-
-        <<jump TheDecision>>
 -> Nah, fuck you
     ???: ...
     ???: ;^;
 
-    <<kickPlayerOut>>
+<<NextLevel>>
 
 
 ===

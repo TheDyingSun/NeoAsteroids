@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             int asteroidsLeft = this.winAmount - this.asteroidsDestroyed;
             this.inGameInterface.updateWinProgress(asteroidsLeft.ToString("D"));
 
-            if (asteroidsDestroyed >= winAmount) GameOver();
+            if (asteroidsDestroyed >= winAmount) LevelPassed();
         }
     }
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
             }
 
             if (timeRemaining <= 0f) {
-                GameOver();
+                LevelPassed();
             } else if (timeRemaining <= 20f && !signalledPlanet) {
                 signalledPlanet = true;
                 planet.setSidescroll(1);
@@ -121,5 +121,16 @@ public class GameManager : MonoBehaviour
         inGameInterface.updateScore(score);
         player.gameObject.SetActive(false);
         Invoke(nameof(ExitToMainMenu), gameEndTime);
+    }
+
+    private void LevelPassed(){
+        StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
+        fadescreen.fadeOut();
+        lives = 0;
+        score = 0;
+        inGameInterface.updateLives(lives);
+        inGameInterface.updateScore(score);
+        player.gameObject.SetActive(false);
+        SceneStateManager.NextLevel();
     }
 }

@@ -9,9 +9,43 @@ public class DialougeManager : MonoBehaviour{
     
     
     // Start is called before the first frame update
-    public void OnEnable() {
+    public void Start() {
 
-        dialogueRunner.StartDialogue("Introduction");
+        switch(SceneStateManager.currentLevel){
+            case CurrentLevel.Introduction:
+                dialogueRunner.StartDialogue("Introduction");
+            break;
+
+            case CurrentLevel.FirstCutScene: 
+                dialogueRunner.StartDialogue("PostIntro");
+
+            break;
+
+            case CurrentLevel.SecondCutScene: // Yar intro
+                dialogueRunner.StartDialogue("YarIntroduction");
+            break;
+
+            case CurrentLevel.ThirdCutScene: // Brough Intro
+                dialogueRunner.StartDialogue("BroughIntroduction");
+            break;
+
+            case CurrentLevel.FourthCutScene: // You have to choose
+                dialogueRunner.StartDialogue("TheDecision");
+            break;
+
+            case CurrentLevel.FinalCutScene:
+                if(SceneStateManager.YarChosen){
+                    dialogueRunner.StartDialogue("YarEnding");
+                } else {
+                    dialogueRunner.StartDialogue("BroughEnding");
+                }
+
+
+            break;
+
+
+
+        }
 
         
     }

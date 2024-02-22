@@ -8,6 +8,18 @@ Space Command: We're sending you to the RD Quadrant to help out some of the loca
 Space Command: We'll be in communication soon when we send reinforcements. #line:07b4e11 
 Space Command: Thank you again and good luck #line:0f08777 
 
-<<jump YarIntroduction>>
+<<NextLevel>>
+
+===
+
+title: PostIntro
+---
+Space Command: Very Impressive!
+Space Command: We're sending you the directions to your ship
+Space Command: Remember to stop every once in a while to charge up
+Space Command: Goes for both you and your ship
+Space Command: Good Luck!
+
+<<NextLevel>>
 
 ===

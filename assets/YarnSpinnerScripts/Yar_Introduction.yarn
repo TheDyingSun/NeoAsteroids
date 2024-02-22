@@ -26,10 +26,8 @@ An alien approaches you as you place the charger on your ship
     -> It might be time for me to head out 
         Yar: I wish you well 
 
-<<jump BroughIntroduction>>
 
-
-<<kickPlayerOut>>
+<<NextLevel>>
 
 
 ===

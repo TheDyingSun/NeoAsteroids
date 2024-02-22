@@ -15,4 +15,22 @@ public class YarnCommands : MonoBehaviour
     public static void ExitToLevelSelector() {
        SceneManager.LoadScene(sceneName:"LevelSelection");
     }
+
+    [YarnCommand("YarEndingChosen")]
+    public static void YarEndingChosen(){
+        SceneStateManager.YarChosen = true;
+    }
+
+    [YarnCommand("BroughEndingChosen")]
+    public static void BroughEndingChosen(){
+        SceneStateManager.YarChosen = false;
+    }
+
+    [YarnCommand("NextLevel")]
+    public static void NextLevelFromYarn(){
+        SceneStateManager.NextLevel();
+
+    }
+
+
 }

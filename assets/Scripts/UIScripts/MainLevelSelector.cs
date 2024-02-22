@@ -21,7 +21,7 @@ public class MainLevelSelector : MonoBehaviour
         cutSceneLevelSelector = root.Q<Button>("CutSceneLevelSelector");
 
         previousScene = root.Q<Label>("PreviousSceneLabel");
-        previousScene.text = SceneStateManager.currentStage;
+        //previousScene.text = SceneStateManager.currentStage;
 
         //Setup eventlisteners
         staticLevelSelector.clicked += () => ChangeToStaticLevel();
@@ -31,19 +31,19 @@ public class MainLevelSelector : MonoBehaviour
     }
 
     private void ChangeToStaticLevel(){
-        SceneStateManager.ChangeCurrentStage("Static");
+        //SceneStateManager.ChangeCurrentStage("Static");
         SceneManager.LoadScene(sceneName:"Asteroids");
 
     }
 
     private void ChangeToSideScrollLevel(){
-        SceneStateManager.ChangeCurrentStage("SideScroller");
+        //SceneStateManager.ChangeCurrentStage("SideScroller");
         SceneManager.LoadScene(sceneName:"SideScroller");
 
     }
 
     private void ChangeToCutScene(){
-        SceneStateManager.ChangeCurrentStage("CutScene");
+        //SceneStateManager.ChangeCurrentStage("CutScene");
         SceneManager.LoadScene(sceneName:"CutScene");
 
     }
