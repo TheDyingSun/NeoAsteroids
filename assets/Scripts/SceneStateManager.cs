@@ -32,6 +32,26 @@ public class SceneStateManager : MonoBehaviour{
             }
         }
     }
+
+    public static void ReloadCurrentLevel(){
+        if(arcadeMode){
+            SceneManager.LoadScene(sceneName:"LevelSelection");
+        } else {
+            Debug.Log(" Re-Launching level: " + currentLevel);
+
+            if(currentLevel == CurrentLevel.Introduction || currentLevel == CurrentLevel.FirstCutScene || currentLevel == CurrentLevel.SecondCutScene || currentLevel == CurrentLevel.ThirdCutScene || currentLevel == CurrentLevel.FourthCutScene || currentLevel == CurrentLevel.FinalCutScene){
+                SceneManager.LoadScene(sceneName:"CutScene");
+
+            } else if(currentLevel == CurrentLevel.IntroStatic || currentLevel == CurrentLevel.SecondStatic || currentLevel == CurrentLevel.FourthStatic){
+                //Static
+                SceneManager.LoadScene(sceneName:"Asteroids");
+
+            } else if(currentLevel == CurrentLevel.FirstSideScroll || currentLevel == CurrentLevel.ThirdSideScroll){
+                //Sidescroller
+                SceneManager.LoadScene(sceneName:"SideScroller");
+            }
+        }
+    }
 }
 
 public enum CurrentLevel {

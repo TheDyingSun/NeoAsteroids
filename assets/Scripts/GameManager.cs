@@ -125,7 +125,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
         fadescreen.fadeOut();
         player.gameObject.SetActive(false);
-        Invoke(nameof(NextLevel), gameEndTime);
+        //Invoke(nameof(NextLevel), gameEndTime);
+        Invoke(nameof(ReloadCurrentLevel), gameEndTime);
     }
 
     private void SetDifficulty() {
@@ -177,5 +178,10 @@ public class GameManager : MonoBehaviour
 
     private void NextLevel() {
         SceneStateManager.NextLevel();
+    }
+
+    private void ReloadCurrentLevel(){
+        SceneStateManager.ReloadCurrentLevel();
+
     }
 }
