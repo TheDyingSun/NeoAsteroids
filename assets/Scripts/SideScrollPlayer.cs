@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,9 +57,19 @@ public class SideScrollPlayer : MonoBehaviour{
             Shoot();
         }
         float newY = transform.position.y + verticalVelocity * Time.deltaTime;
-        newY = Mathf.Clamp(newY, -4f, 4f);
+        if (Mathf.Abs(newY) > 4f) {
+            newY = Mathf.Clamp(newY, -4f, 4f);
+            verticalVelocity = 0f;
+
+        }
         transform.position = new Vector3(-5f, newY, 0f);
+
         angle += turnVelocity * Time.deltaTime;
+        Debug.Log(angle);
+        if (angle > 0f || angle < -180f) {
+            angle = Mathf.Clamp(angle, -180f, 0f);
+            turnVelocity = 0f;
+        }
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         verticalVelocity *= 0.999f;
