@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,22 +12,11 @@ public class SceneStateManager : MonoBehaviour{
 
     public bool ChoseYar = true; //Choosing yar is the default
 
-
-    public static void ChangeCurrentStage(string input){
-
-        //currentStage = input;
-
-    }
-
-
     public static void NextLevel(){
         if(arcadeMode){
             SceneManager.LoadScene(sceneName:"LevelSelection");
-
-
-        
-
         } else {
+            Debug.Log(currentLevel);
             currentLevel++;
 
             if(currentLevel == CurrentLevel.Introduction || currentLevel == CurrentLevel.FirstCutScene || currentLevel == CurrentLevel.SecondCutScene || currentLevel == CurrentLevel.ThirdCutScene || currentLevel == CurrentLevel.FourthCutScene || currentLevel == CurrentLevel.FinalCutScene){
@@ -40,18 +30,7 @@ public class SceneStateManager : MonoBehaviour{
                 //Sidescroller
                 SceneManager.LoadScene(sceneName:"SideScroller");
             }
-
-
-
-
         }
-
-
-   
-
-
-        
-
     }
 }
 

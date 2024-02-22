@@ -31,11 +31,6 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         SetDifficulty();
-        
-        if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
-        if (winCondition == WinCondition.Number || winCondition == WinCondition.Score) {
-            planet.setStatic(1);
-        }
 
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
@@ -129,22 +124,30 @@ public class GameManager : MonoBehaviour
             case CurrentLevel.IntroStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 20;
+                planet.setStatic(0);
                 break;
             case CurrentLevel.FirstSideScroll:
                 winCondition = WinCondition.Time;
-                winAmount = 30;
+                winAmount = 60;
+                planet.setSidescroll(1);
                 break;
             case CurrentLevel.SecondStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 30;
+                planet.setStatic(1);
                 break;
             case CurrentLevel.ThirdSideScroll:
                 winCondition = WinCondition.Time;
-                winAmount = 45;
+                winAmount = 90;
                 break;
             case CurrentLevel.FourthStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 45;
+                if (SceneStateManager.YarChosen) {
+                    planet.setStatic(2);
+                } else {
+                    planet.setStatic(3);
+                }
                 break;
             default:
                 Debug.LogError("Invalid level for this scene!");
@@ -155,11 +158,11 @@ public class GameManager : MonoBehaviour
     private void LevelPassed(){
         StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
         fadescreen.fadeOut();
-        lives = 0;
-        score = 0;
-        inGameInterface.updateLives(lives);
-        inGameInterface.updateScore(score);
         player.gameObject.SetActive(false);
+        Invoke(nameof(NextLevel), gameEndTime);
+    }
+
+    private void NextLevel() {
         SceneStateManager.NextLevel();
     }
 }
