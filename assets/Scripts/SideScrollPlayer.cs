@@ -64,6 +64,7 @@ public class SideScrollPlayer : MonoBehaviour{
         }
         transform.position = new Vector3(-5f, newY, 0f);
 
+        angle += turnVelocity * Time.deltaTime;
         if (angle > 0f || angle < -180f) {
             angle = Mathf.Clamp(angle, -180f, 0f);
             turnVelocity = 0f;

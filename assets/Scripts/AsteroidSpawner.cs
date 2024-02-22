@@ -44,6 +44,10 @@ public class AsteroidSpawner : MonoBehaviour{
                 spawnRate = 3f;
                 spawnAmount = 2;
                 break;
+            case CurrentLevel.ArcadeStatic:
+                spawnRate = 3f;
+                spawnAmount = 2;
+                break;
             default:
                 Debug.LogError("Invalid level for this scene!");
                 break;

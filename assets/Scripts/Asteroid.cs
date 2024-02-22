@@ -102,6 +102,16 @@ public class Asteroid : MonoBehaviour
                     speed = 200f;
                 }
                 break;
+            case CurrentLevel.ArcadeStatic:
+                minSize = 0.5f;
+                maxSize = 2f;
+                speed = 300f;
+                break;
+            case CurrentLevel.ArcadeSideScroll:
+                minSize = 0.5f;
+                maxSize = 2f;
+                speed = 400f;
+                break;
         }
     }
 }
