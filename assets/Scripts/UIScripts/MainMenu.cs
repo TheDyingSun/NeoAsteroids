@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         versionButton = root.Q<Button>("VersionButton");
 
         storyButton.clicked += () => Story();
-        arcadeButton.clicked += () => Story();
+        arcadeButton.clicked += () => Arcade();
         exitButton.clicked += () => Exit();
         creditsButton.clicked += () => Credits();
         initialButton.clicked += () => Initial_Build();
@@ -27,6 +27,11 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Story() {
+        SceneStateManager.currentLevel = CurrentLevel.Introduction;
+        SceneManager.LoadScene(sceneName:"CutScene");
+    }
+
+    public void Arcade() {
         SceneManager.LoadScene(sceneName:"LevelSelection");
     }
 

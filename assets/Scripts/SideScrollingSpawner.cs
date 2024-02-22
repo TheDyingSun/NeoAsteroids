@@ -14,6 +14,7 @@ public class SideScrollingSpawner : MonoBehaviour{
 
 
     private void Start(){
+        SetDifficulty();
         InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
     }
 
@@ -30,5 +31,19 @@ public class SideScrollingSpawner : MonoBehaviour{
         asteroid.speed = spawnSpeed;
         
         asteroid.SetTrajectory(trajectory);
+    }
+
+    private void SetDifficulty() {
+        switch (SceneStateManager.currentLevel) {
+            case CurrentLevel.SecondLevel:
+                spawnRate = 3f;
+                break;
+            case CurrentLevel.FourthLevel:
+                spawnRate = 2f;
+                break;
+            default:
+                Debug.LogError("Invalid level for this scene!");
+                break;
+        }
     }
 }
