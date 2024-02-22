@@ -9,6 +9,8 @@ public class SceneStateManager : MonoBehaviour{
 
     public static bool YarChosen = true;
 
+    public bool ChoseYar = true; //Choosing yar is the default
+
 
     public static void ChangeCurrentStage(string input){
 
@@ -18,9 +20,11 @@ public class SceneStateManager : MonoBehaviour{
 
 
     public static void NextLevel(){
-
         if(arcadeMode){
-            SceneManager.LoadScene(sceneName:"MainMenu");
+            SceneManager.LoadScene(sceneName:"LevelSelection");
+
+
+        
 
         } else {
             currentLevel++;
@@ -43,21 +47,25 @@ public class SceneStateManager : MonoBehaviour{
         }
 
 
-    }
+   
 
+
+        
+
+    }
 }
 
-public enum CurrentLevel{
-    Introduction = 0,
-    IntroStatic = 1,
-    FirstCutScene = 2, //Space Commendation
-    FirstSideScroll = 3,
-    SecondCutScene, // Meeting the Yar
-    SecondStatic,
-    ThirdCutScene, // Meeting the Brough
-    ThirdSideScroll,
-    FourthCutScene, // You have to pick
-    FourthStatic,
-    FinalCutScene   //Thank you for playing
-
+public enum CurrentLevel {
+    Introduction,
+    IntroStatic,
+    FirstCutScene,    // Space Commendation
+    SecondLevel,
+    SecondCutScene,   // Meeting the Yar
+    ThirdLevel,
+    ThirdCutScene,    // Meeting the Brough
+    FourthLevel,
+    FourthCutScene,   // You have to pick
+    FifthLevelYar,
+    FifthLevelBrough,
+    FinalCutScene     // Thank you for playing
 }

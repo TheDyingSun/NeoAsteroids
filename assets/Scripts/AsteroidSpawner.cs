@@ -12,12 +12,13 @@ public class AsteroidSpawner : MonoBehaviour{
     float trajectoryVariance = 15.0f;
 
 
-    private void Start(){
+    private void Start() {
+        SetDifficulty();
         InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
     }
 
-    private void Spawn(){
-        for (int i = 0; i < this.spawnAmount; i++){
+    private void Spawn() {
+        for (int i = 0; i < this.spawnAmount; i++) {
             Vector3 spawnDirection = Random.insideUnitCircle.normalized * this.spawnDistance;
             Vector3 spawnPoint = spawnDirection + this.transform.position;
 
@@ -27,6 +28,29 @@ public class AsteroidSpawner : MonoBehaviour{
             Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
             asteroid.size = Random.Range(asteroid.minSize, asteroid.maxSize);
             asteroid.SetTrajectory(rotation * -spawnDirection / this.spawnDistance);
+        }
+    }
+
+    private void SetDifficulty() {
+        switch (SceneStateManager.currentLevel) {
+            case CurrentLevel.FirstLevel:
+                spawnRate = 3f;
+                break;
+            case CurrentLevel.ThirdLevel:
+                spawnRate = 4f;
+                spawnAmount = 2;
+                break;
+            case CurrentLevel.FifthLevelYar:
+                spawnRate = 3f;
+                spawnAmount = 2;
+                break;
+            case CurrentLevel.FifthLevelBrough:
+                spawnRate = 3f;
+                spawnAmount = 2;
+                break;
+            default:
+                Debug.LogError("Invalid level for this scene!");
+                break;
         }
     }
 }

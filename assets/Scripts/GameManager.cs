@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private float timeRemaining;
 
     private void Start() {
+        SetDifficulty();
+        
         if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
         if (winCondition == WinCondition.Number || winCondition == WinCondition.Score) {
             planet.setStatic(1);
@@ -115,12 +117,40 @@ public class GameManager : MonoBehaviour
     private void GameOver(){
         StartCoroutine(FadeAudio.StartFade(GameObject.Find("Background Music").GetComponent<AudioSource>(), gameEndTime, 0f, 0.5f));
         fadescreen.fadeOut();
-        lives = 0;
-        score = 0;
-        inGameInterface.updateLives(lives);
-        inGameInterface.updateScore(score);
         player.gameObject.SetActive(false);
-        Invoke(nameof(ExitToMainMenu), gameEndTime);
+        Invoke(nameof(SceneStateManager.NextLevel), gameEndTime);
+    }
+
+    private void SetDifficulty() {
+        switch (SceneStateManager.currentLevel) {
+            case CurrentLevel.FirstLevel:
+                winCondition = WinCondition.Number;
+                winAmount = 20;
+                break;
+            case CurrentLevel.SecondLevel:
+                winCondition = WinCondition.Time;
+                winAmount = 30;
+                break;
+            case CurrentLevel.ThirdLevel:
+                winCondition = WinCondition.Number;
+                winAmount = 30;
+                break;
+            case CurrentLevel.FourthLevel:
+                winCondition = WinCondition.Time;
+                winAmount = 45;
+                break;
+            case CurrentLevel.FifthLevelYar:
+                winCondition = WinCondition.Number;
+                winAmount = 45;
+                break;
+            case CurrentLevel.FifthLevelBrough:
+                winCondition = WinCondition.Number;
+                winAmount = 45;
+                break;
+            default:
+                Debug.LogError("Invalid level for this scene!");
+                break;
+        }
     }
 
     private void LevelPassed(){
