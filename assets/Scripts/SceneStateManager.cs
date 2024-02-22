@@ -59,13 +59,12 @@ public enum CurrentLevel {
     Introduction,
     IntroStatic,
     FirstCutScene,    // Space Commendation
-    SecondLevel,
+    FirstSideScroll,
     SecondCutScene,   // Meeting the Yar
-    ThirdLevel,
+    SecondStatic,
     ThirdCutScene,    // Meeting the Brough
-    FourthLevel,
+    ThirdSideScroll,
     FourthCutScene,   // You have to pick
-    FifthLevelYar,
-    FifthLevelBrough,
+    FourthStatic,
     FinalCutScene     // Thank you for playing
 }

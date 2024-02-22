@@ -123,27 +123,23 @@ public class GameManager : MonoBehaviour
 
     private void SetDifficulty() {
         switch (SceneStateManager.currentLevel) {
-            case CurrentLevel.FirstLevel:
+            case CurrentLevel.IntroStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 20;
                 break;
-            case CurrentLevel.SecondLevel:
+            case CurrentLevel.FirstSideScroll:
                 winCondition = WinCondition.Time;
                 winAmount = 30;
                 break;
-            case CurrentLevel.ThirdLevel:
+            case CurrentLevel.SecondStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 30;
                 break;
-            case CurrentLevel.FourthLevel:
+            case CurrentLevel.ThirdSideScroll:
                 winCondition = WinCondition.Time;
                 winAmount = 45;
                 break;
-            case CurrentLevel.FifthLevelYar:
-                winCondition = WinCondition.Number;
-                winAmount = 45;
-                break;
-            case CurrentLevel.FifthLevelBrough:
+            case CurrentLevel.FourthStatic:
                 winCondition = WinCondition.Number;
                 winAmount = 45;
                 break;
