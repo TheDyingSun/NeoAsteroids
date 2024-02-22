@@ -91,6 +91,17 @@ public class Asteroid : MonoBehaviour
                 maxSize = 2f;
                 speed = 400f;
                 break;
+            case CurrentLevel.FourthStatic:
+                if (SceneStateManager.YarChosen) {
+                    minSize = 0.5f;
+                    maxSize = 2f;
+                    speed = 400f;
+                } else {
+                    minSize = 0.5f;
+                    maxSize = 3.0f;
+                    speed = 200f;
+                }
+                break;
         }
     }
 }
