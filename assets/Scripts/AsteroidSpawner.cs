@@ -33,18 +33,14 @@ public class AsteroidSpawner : MonoBehaviour{
 
     private void SetDifficulty() {
         switch (SceneStateManager.currentLevel) {
-            case CurrentLevel.FirstLevel:
+            case CurrentLevel.IntroStatic:
                 spawnRate = 3f;
                 break;
-            case CurrentLevel.ThirdLevel:
+            case CurrentLevel.SecondStatic:
                 spawnRate = 4f;
                 spawnAmount = 2;
                 break;
-            case CurrentLevel.FifthLevelYar:
-                spawnRate = 3f;
-                spawnAmount = 2;
-                break;
-            case CurrentLevel.FifthLevelBrough:
+            case CurrentLevel.FourthStatic:
                 spawnRate = 3f;
                 spawnAmount = 2;
                 break;

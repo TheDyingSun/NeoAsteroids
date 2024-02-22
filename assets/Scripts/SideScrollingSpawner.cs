@@ -35,10 +35,10 @@ public class SideScrollingSpawner : MonoBehaviour{
 
     private void SetDifficulty() {
         switch (SceneStateManager.currentLevel) {
-            case CurrentLevel.SecondLevel:
+            case CurrentLevel.FirstSideScroll:
                 spawnRate = 3f;
                 break;
-            case CurrentLevel.FourthLevel:
+            case CurrentLevel.ThirdSideScroll:
                 spawnRate = 2f;
                 break;
             default:
