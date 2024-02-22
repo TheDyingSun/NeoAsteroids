@@ -4,19 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneStateManager : MonoBehaviour{
-    public static string currentStage = "Debug Text";
+    public static CurrentLevel currentLevel;
+    public static bool arcadeMode = true;
 
 
-    public static void ChangeCurrentStage(string input){
+    // public static void ChangeCurrentStage(CurrentLevel newLevel){
 
-        currentStage = input;
 
-    }
+
+    // }
 
 
     public static void NextLevel(){
+        if(arcadeMode){
+            SceneManager.LoadScene(sceneName:"MainMenu");
 
-        SceneManager.LoadScene(sceneName:"MainMenu");
+        }
+        
 
     }
 
