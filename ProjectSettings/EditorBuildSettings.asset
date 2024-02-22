@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CutScene.unity
     guid: 0596d6372578788479a555232fce8a8d
   - enabled: 1
-    path: Assets/Scenes/SideScrollLevel.unity
-    guid: 99b27369d2257494788f9de433936b80
-  - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 4538fd50c16caf943b09214e6f800af8
   - enabled: 1

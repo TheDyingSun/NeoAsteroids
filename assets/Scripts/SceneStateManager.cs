@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneStateManager : MonoBehaviour{
-    public static CurrentLevel currentLevel = CurrentLevel.FourthCutScene;
+    public static CurrentLevel currentLevel = CurrentLevel.FourthStatic;
     public static bool arcadeMode = false;
 
     public static bool YarChosen = true;

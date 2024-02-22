@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
     private bool hasPassed = false;
     private int planetSprite = 0;
 
+
+
+    private void OnEnable(){
+        fadescreen.fadeIn();
+    }
+
     private void Start() {
         SetDifficulty();
         if (winCondition == WinCondition.Time) timeRemaining = (float) winAmount;
@@ -37,7 +43,6 @@ public class GameManager : MonoBehaviour
 
         inGameInterface.updateWinCondition(winCondition);
         inGameInterface.updateWinProgress(winAmount.ToString("D"));
-        if (fadescreen) fadescreen.fadeIn();
     }
 
     private void ExitToMainMenu() {
