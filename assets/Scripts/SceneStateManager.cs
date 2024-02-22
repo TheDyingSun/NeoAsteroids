@@ -65,5 +65,7 @@ public enum CurrentLevel {
     ThirdSideScroll,
     FourthCutScene,   // You have to pick
     FourthStatic,
-    FinalCutScene     // Thank you for playing
+    FinalCutScene,    // Thank you for playing
+    ArcadeStatic,
+    ArcadeSideScroll
 }

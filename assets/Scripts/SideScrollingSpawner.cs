@@ -41,6 +41,9 @@ public class SideScrollingSpawner : MonoBehaviour{
             case CurrentLevel.ThirdSideScroll:
                 spawnRate = 2f;
                 break;
+            case CurrentLevel.ArcadeSideScroll:
+                spawnRate = 1.5f;
+                break;
             default:
                 Debug.LogError("Invalid level for this scene!");
                 break;

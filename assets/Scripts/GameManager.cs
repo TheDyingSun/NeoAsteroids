@@ -160,6 +160,16 @@ public class GameManager : MonoBehaviour
                     planetSprite = 3;
                 }
                 break;
+            case CurrentLevel.ArcadeStatic:
+                winCondition = WinCondition.Number;
+                winAmount = 10000;
+                planetSprite = 3;
+                break;
+            case CurrentLevel.ArcadeSideScroll:
+                winCondition = WinCondition.Time;
+                winAmount = 3600;
+                planetSprite = 3;
+                break;
             default:
                 Debug.LogError("Invalid level for this scene!");
                 break;

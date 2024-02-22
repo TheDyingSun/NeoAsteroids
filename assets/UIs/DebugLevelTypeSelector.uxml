@@ -1,7 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UIs/PauseScreenUIClasses.uss?fileID=7433441132597879392&amp;guid=65f7635433171164e8be29f671adf75c&amp;type=3#PauseScreenUIClasses" />
     <Style src="project://database/Assets/UIs/text.uss?fileID=7433441132597879392&amp;guid=de901fdc1b9e54ee398cd56b57b1838c&amp;type=3#text" />
-    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PreviousSceneLabel" style="font-size: 40px; color: rgb(255, 255, 255);" />
     <ui:VisualElement name="VisualElement" class="serif" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
         <ui:VisualElement style="flex-grow: 0; height: auto; align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
             <ui:Label tabindex="-1" text="choose level type" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" style="-unity-text-align: upper-center; width: auto; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); height: auto; font-size: 60px;" />
@@ -9,7 +8,6 @@
         <ui:VisualElement style="flex-grow: 0; width: auto; padding-left: 0; padding-right: 0; transform-origin: left top; translate: 0 0; text-overflow: clip; flex-direction: row; align-self: center; align-items: auto; justify-content: flex-start; flex-shrink: 0;">
             <ui:Button text="static" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StaticLevelSelector" class="button" />
             <ui:Button text="sidescroll" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SideScrollLevelSelector" class="button" />
-            <ui:Button text="cutscene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CutSceneLevelSelector" class="button" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -5,35 +5,26 @@ using UnityEngine.SceneManagement;
 public class MainLevelSelector : MonoBehaviour
 {
     VisualElement root;
-    Button staticLevelSelector, sideScrollLevelSelector, cutSceneLevelSelector;
+    Button staticLevelSelector, sideScrollLevelSelector;
 
     void OnEnable(){
         root = GetComponent<UIDocument>().rootVisualElement;
         
         staticLevelSelector = root.Q<Button>("StaticLevelSelector");
         sideScrollLevelSelector = root.Q<Button>("SideScrollLevelSelector");
-        cutSceneLevelSelector = root.Q<Button>("CutSceneLevelSelector");
 
         staticLevelSelector.clicked += () => ChangeToStaticLevel();
         sideScrollLevelSelector.clicked += () => ChangeToSideScrollLevel();
-        cutSceneLevelSelector.clicked += () => ChangeToCutScene();
     }
 
     private void ChangeToStaticLevel(){
-        //SceneStateManager.ChangeCurrentStage("Static");
+        SceneStateManager.currentLevel = CurrentLevel.ArcadeStatic;
         SceneManager.LoadScene(sceneName:"Asteroids");
 
     }
 
     private void ChangeToSideScrollLevel(){
-        //SceneStateManager.ChangeCurrentStage("SideScroller");
+        SceneStateManager.currentLevel = CurrentLevel.ArcadeSideScroll;
         SceneManager.LoadScene(sceneName:"SideScroller");
-
     }
-
-    private void ChangeToCutScene(){
-        //SceneStateManager.ChangeCurrentStage("CutScene");
-        SceneManager.LoadScene(sceneName:"CutScene");
-    }
-
 }
